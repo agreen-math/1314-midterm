@@ -5,36 +5,46 @@
         <p>
             <m>{{ equation }}</m>
         </p>
-        <p>
-            (a) When will the rocket reach its maximum height?
-        </p>
-        <p>
-            (b) What is the maximum height the rocket will reach?
-        </p>
-        <p>
-            (c) Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.
-        </p>
+        <list>
+            <item>
+                <content>
+                    <p>When will the rocket reach its maximum height?</p>
+                </content>
+                <outtro>
+                    <p>SOLUTION</p>
+                    <p>
+                        <m>{{ part_a_setup }} = {{ part_a_simplify }} = {{ part_a_ans }}</m>
+                    </p>
+                    <p><m>{{ part_a_ans }}</m> sec</p>
+                </outtro>
+            </item>
+            <item>
+                <content>
+                    <p>What is the maximum height the rocket will reach?</p>
+                </content>
+                <outtro>
+                    <p>SOLUTION</p>
+                    <p>
+                        <m>{{ part_b_setup }}</m>
+                    </p>
+                    <p>
+                        <m>{{ part_b_simplify }}</m>
+                    </p>
+                    <p>
+                        <m>= {{ part_b_ans }}</m>
+                    </p>
+                    <p><m>{{ part_b_ans }}</m> ft</p>
+                </outtro>
+            </item>
+            <item>
+                <content>
+                    <p>Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.</p>
+                </content>
+                <outtro>
+                    <p>SOLUTION</p>
+                    <p>{{ sentence }}</p>
+                </outtro>
+            </item>
+        </list>
     </content>
-    <outtro>
-        <p><strong>(a) Time to max height:</strong></p>
-        <p>
-            <m>{{ part_a_setup }} = {{ part_a_simplify }} = {{ part_a_ans }}</m>
-        </p>
-        <p>Answer: <m>{{ part_a_ans }}</m> sec</p>
-        
-        <p><strong>(b) Maximum height:</strong></p>
-        <p>
-            <m>{{ part_b_setup }}</m>
-        </p>
-        <p>
-            <m>{{ part_b_simplify }}</m>
-        </p>
-        <p>
-            <m>= {{ part_b_ans }}</m>
-        </p>
-        <p>Answer: <m>{{ part_b_ans }}</m> ft</p>
-        
-        <p><strong>(c) Interpretation:</strong></p>
-        <p>{{ sentence }}</p>
-    </outtro>
 </knowl>
