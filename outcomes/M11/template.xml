@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>
+            A quadratic function has the characteristics given below. Use the axis of symmetry to generate two additional points, then use all five points to graph the function.
+        </p>
+    </intro>
+    <content>
+        <list>
+            <item>
+                <p><m>\text{Vertex: } {{vertex}}</m></p>
+            </item>
+            <item>
+                <p><m>x\text{-intercept: } {{x_val}}</m></p>
+            </item>
+            <item>
+                <p><m>y\text{-intercept: } {{y_val}}</m></p>
+            </item>
+        </list>
+        
+        <p>
+            {{blank_grid}}
+        </p>
+    </content>
+    <outtro>
+        <p>SOLUTION</p>
+        <p>
+            \begin{multicols}{2}
+            <strong>Points to plot:</strong>
+        </p>
+        
+        <list>
+            <item><p><m>{{sol_p1}}</m></p></item>
+            <item><p><m>{{sol_p2}}</m></p></item>
+            <item><p><m>{{sol_p3}}</m></p></item>
+            <item><p><m>{{sol_p4}}</m></p></item>
+            <item><p><m>{{sol_p5}}</m></p></item>
+        </list>
+        
+        <p>
+            \columnbreak
+            <strong>Graph:</strong>
+        </p>
+        <p>
+            {{sol_graph}}
+        </p>
+        
+        <p>
+            \end{multicols}
+        </p>
+    </outtro>
+</knowl>

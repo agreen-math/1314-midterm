@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>
+            Use the table to identify the transformations described by <m>g(x) = {{expr}}</m>.
+        </p>
+        <p>
+            Circle the option that applies and fill in the blanks as appropriate. Then apply these transformations to the graph of the function shown below.
+        </p>
+    </intro>
+    <content>
+        <p>
+            <m>
+                \renewcommand{\arraystretch}{3}
+                \begin{array}{|l|l|}
+                    \hline
+                    \textbf{Horizontal Transformations} &amp; \textbf{Vertical Transformations} \\ \hline
+                    \text{Reflection: YES    or     NO} &amp; \text{Reflection:        YES    or     NO} \\ \hline
+                    \text{Dilation: \underline{\hspace{2cm}} times as wide} &amp; \text{Dilation: \underline{\hspace{2cm}} times as tall} \\ \hline
+                    \text{Translation: \underline{\hspace{2cm}} units LEFT or RIGHT} &amp; \text{Translation: \underline{\hspace{2cm}} units UP or DOWN} \\ \hline
+                \end{array}
+            </m>
+        </p>
+        
+        <p>
+            \noindent\makebox[\textwidth][c]{
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    {{graph_orig}}
+                \end{minipage}
+                \hfill
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    {{graph_blank}}
+                \end{minipage}
+            }
+        </p>
+    </content>
+    <outtro>
+        <p>SOLUTION</p>
+        <p><strong>Transformations:</strong></p>
+        <list>
+            <item>
+                <p>
+                    <m>\textbf{Horizontal: } \text{Reflection: {{h_ref}}, Dilation: {{h_dil}}, Shift: {{h_dist}} units {{h_dir}}.}</m>
+                </p>
+            </item>
+            <item>
+                <p>
+                    <m>\textbf{Vertical: } \text{Reflection: {{v_ref}}, Dilation: {{v_dil}}, Shift: {{v_dist}} units {{v_dir}}.}</m>
+                </p>
+            </item>
+        </list>
+        
+        <p><strong>Graph:</strong></p>
+        <p>
+            {{graph_sol}}
+        </p>
+    </outtro>
+</knowl>
