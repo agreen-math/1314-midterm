@@ -8,8 +8,9 @@
             <p>Find <m>f({{val_a}})</m>.</p>
         </content>
         <outtro>
-            <p>Grading Step (Substitution): <m>{{step_a}}</m></p>
-            <p>Final Result: <m>f({{val_a}}) = {{ans_a}}</m></p>
+            <p>SOLUTION</p>
+            <p><m>{{step_a}}</m></p>
+            <p><m>\boxed{f({{val_a}}) = {{ans_a}}}</m></p>
         </outtro>
     </knowl>
     <knowl>
@@ -17,8 +18,9 @@
             <p>Find <m>f(-x)</m>.</p>
         </content>
         <outtro>
-            <p>Grading Step (Substitution): <m>{{step_b}}</m></p>
-            <p>Final Result: <m>f(-x) = {{ans_b}}</m></p>
+            <p>SOLUTION</p>
+            <p><m>{{step_b}}</m></p>
+            <p><m>\boxed{f(-x) = {{ans_b}}}</m></p>
         </outtro>
     </knowl>
     <knowl>
@@ -26,8 +28,9 @@
             <p>Find <m>f(x + a)</m>.</p>
         </content>
         <outtro>
-            <p>Grading Step (Substitution): <m>{{step_c}}</m></p>
-            <p>Final Result: <m>f(x + a) = {{ans_c}}</m></p>
+            <p>SOLUTION</p>
+            <p><m>{{step_c}}</m></p>
+            <p><m>\boxed{f(x + a) = {{ans_c}}}</m></p>
         </outtro>
     </knowl>
 </knowl>

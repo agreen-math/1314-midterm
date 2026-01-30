@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <content>
+        <p>
+            Evaluate the difference quotient, <m>\displaystyle{ \frac{f(x+h)-f(x)}{h}}</m> , for  <m>{{f_tex}}</m>.
+        </p>
+    </content>
+    <outtro>
+        <p>SOLUTION</p>
+        <p>
+            <m>f(x+h) = {{step1_sub}}</m>
+        </p>
+        <p>
+            <m>= {{step2_expand}}</m>
+        </p>
+        <p>
+            <m>= {{step3_dist}}</m>
+        </p>
+        <p>
+            <m>\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ {{step4_num_setup}} }{h}}</m>
+        </p>
+        <p>
+            <m>=\displaystyle{ \frac{ {{step5_num_simp}} }{h}}</m>
+        </p>
+        <p>
+            <m>= \displaystyle{ \frac{ {{step6_factor}} }{h}}</m>
+        </p>
+        <p>
+            <m>\boxed{ {{final_ans}} }</m>
+        </p>
+    </outtro>
+</knowl>

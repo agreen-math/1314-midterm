@@ -9,23 +9,18 @@
         </p>
     </content>
     <outtro>
+        <p>SOLUTION</p>
         <p>
-            Standard Form: 
             <m>{{a}}x^2 + ({{b_eff}})x + {{c}} = 0</m>
         </p>
         <p>
-            Grading Step (Discriminant Setup): 
             <m>\Delta = ({{b_eff}})^2 - 4({{a}})({{c}})</m>
         </p>
         <p>
-            Intermediate Value: 
             <m>\Delta = {{disc}}</m>
         </p>
         <p>
-            Number of Solutions: {{num}}
-        </p>
-        <p>
-            Type of Solutions: {{type}}
+            <m>\boxed{\text{ {{num}} solutions, {{type}} }}</m>
         </p>
     </outtro>
 </knowl>

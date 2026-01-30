@@ -3,74 +3,94 @@ from random import randint, choice
 
 class Generator(BaseGenerator):
     def data(self):
-        x = var("x")
+        x = var('x')
+        y = var('y')
 
-        # 1. Define the constant C for f(x) = cbrt(x) + C
-        # We keep it between -6 and 6 to keep the cubed numbers reasonable
-        c = Integer(randint(-6, 6))
-        while c == 0:
-            c = Integer(randint(-6, 6))
+        # 1. Define Random Parameters
+        # Function: f(x) = cbrt(x + A) + B
+        
+        # A = Inside shift (horizontal)
+        A = choice([0, 0, 0, 1, -1, 2, -2])
+        
+        # B = Outside shift (vertical)
+        B = randint(-5, 5)
+        while B == 0:
+            B = randint(-5, 5)
 
-        # 2. Format the function definition
-        if c < 0:
-            sign_c = "-"
-            abs_c = -c
-            # If f(x) = cbrt(x) - 3, then inverse uses (x + 3)
-            inv_sign = "+"
-            inv_val = -c 
+        # 2. Build the Original Function LaTeX
+        # Handle A inside the radical
+        if A == 0:
+            radicand = "x"
+        elif A > 0:
+            radicand = f"x + {A}"
         else:
-            sign_c = "+"
-            abs_c = c
-            # If f(x) = cbrt(x) + 3, then inverse uses (x - 3)
-            inv_sign = "-"
-            inv_val = c
+            radicand = f"x - {abs(A)}"
+            
+        # Handle B outside
+        if B > 0:
+            const_B = f"+ {B}"
+        else:
+            const_B = f"- {abs(B)}"
+            
+        equation = f"f(x) = \\sqrt[3]{{{radicand}}} {const_B}"
 
-        function_def = f"f(x) = \\sqrt[3]{{x}} {sign_c} {abs_c}"
-
-        # 3. Setup steps strings
-        # Step 1: Replace f(x) with y
-        step1 = f"y = \\sqrt[3]{{x}} {sign_c} {abs_c}"
+        # 3. Steps for Inverse
         
-        # Step 2: Swap x and y
-        step2 = f"x = \\sqrt[3]{{y}} {sign_c} {abs_c}"
+        # Step 1: Swap x and y
+        step_swap = f"x = \\sqrt[3]{{{radicand.replace('x', 'y')}}} {const_B}"
         
-        # Step 3: Isolate the radical
-        step3 = f"x {inv_sign} {inv_val} = \\sqrt[3]{{y}}"
+        # Step 2: Isolate Radical
+        # x - B = cbrt(y+A)
+        K = -B
+        if K > 0:
+            lhs_iso = f"x + {K}"
+        else:
+            lhs_iso = f"x - {abs(K)}"
+            
+        step_isolate = f"{lhs_iso} = \\sqrt[3]{{{radicand.replace('x', 'y')}}}"
         
-        # Step 4: Cube both sides
-        step4 = f"(x {inv_sign} {inv_val})^3 = y"
-
-        # 4. Expand the polynomial (x + k)^3
-        # Formula: x^3 + 3k x^2 + 3k^2 x + k^3
-        # Determine k based on the inverse sign
-        k = inv_val if inv_sign == "+" else -inv_val
+        # Step 3: Cube both sides
+        step_cube = f"({lhs_iso})^3 = {radicand.replace('x', 'y')}"
         
-        coeff_x2 = 3 * k
-        coeff_x1 = 3 * k**2
-        coeff_x0 = k**3
-
-        # Build the polynomial string carefully to handle signs
-        poly = "x^3"
+        # Step 4: Solve for y (Factored)
+        if A == 0:
+            factored_rhs = f"({lhs_iso})^3"
+        elif A > 0:
+            factored_rhs = f"({lhs_iso})^3 - {A}"
+        else:
+            factored_rhs = f"({lhs_iso})^3 + {abs(A)}"
+            
+        factored_ans = f"f^{{-1}}(x) = {factored_rhs}"
         
-        # x^2 term
-        if coeff_x2 < 0: poly += f" - {-coeff_x2}x^2"
-        else:            poly += f" + {coeff_x2}x^2"
+        # 4. Expansion Steps (The "Extra" credit part)
         
-        # x term (always positive since 3*k^2)
-        poly += f" + {coeff_x1}x"
+        # Expansion 1: Square the binomial (x+K)^2
+        k_sq = K**2
+        two_k = 2*K
         
-        # Constant term
-        if coeff_x0 < 0: poly += f" - {-coeff_x0}"
-        else:            poly += f" + {coeff_x0}"
-
-        step5 = f"f^{{-1}}(x) = {poly}"
+        if two_k == 0:
+            quad_term = "x^2"
+        elif two_k > 0:
+            quad_term = f"x^2 + {two_k}x + {k_sq}"
+        else:
+            quad_term = f"x^2 - {abs(two_k)}x + {k_sq}"
+            
+        exp_step1 = f"({lhs_iso})({quad_term})"
+        if A != 0:
+            if A > 0: exp_step1 += f" - {A}"
+            else:     exp_step1 += f" + {abs(A)}"
+            
+        # Expansion 2: Final Expanded Polynomial
+        poly_expr = expand((x + K)**3 - A)
+        expanded_ans = f"f^{{-1}}(x) = {latex(poly_expr)}"
 
         return {
-            "function_def": function_def,
-            "step1": step1,
-            "step2": step2,
-            "step3": step3,
-            "step4": step4,
-            "step5": step5,
-            "expanded": poly,
+            "equation": equation,
+            "step_swap": step_swap,
+            "step_isolate": step_isolate,
+            "step_cube": step_cube,
+            "step_solve": f"y = {factored_rhs}",
+            "factored_ans": factored_ans,
+            "exp_step1": exp_step1,
+            "expanded_ans": expanded_ans
         }

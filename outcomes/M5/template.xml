@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro>
         <p>
@@ -5,14 +6,29 @@
         </p>
     </intro>
     <content>
-        <p><m>{{equation}}</m></p>
+        <p>
+            <m>{{equation}}</m>
+        </p>
     </content>
     <outtro>
-        <p><m>{{step1}}</m></p>
-        <p><m>{{quadratic}}</m></p>
-        <p><m>{{factored}}</m></p>
-        <p><m>x = {{x_valid}}, \quad x = {{x_ext}}</m></p>
-        <p><m>x = {{x_ext}} \implies \text{Extraneous}</m></p>
-        <p><m>x = {{x_valid}}</m></p>
+        <p>SOLUTION</p>
+        <p>
+            <m>{{step1}}</m>
+        </p>
+        <p>
+            <m>{{quadratic}}</m>
+        </p>
+        <p>
+            <m>{{factored}}</m>
+        </p>
+        <p>
+            <m>x = {{x_valid}}, \quad x = {{x_ext}}</m>
+        </p>
+        <p>
+            <m>x = {{x_ext}} \implies \text{Extraneous}</m>
+        </p>
+        <p>
+            <m>\boxed{x = {{x_valid}}}</m>
+        </p>
     </outtro>
 </knowl>

@@ -1,24 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>
+            Given that the function is one-to-one, find the inverse function <m>f^{-1}(x)</m>.
+        </p>
+    </intro>
     <content>
-        <p>Given that <m>{{ function_def }}</m> is one-to-one, find <m>f^{-1}(x)</m>.</p>
+        <p>
+            <m>{{equation}}</m>
+        </p>
     </content>
     <outtro>
+        <p>SOLUTION</p>
         <p>
-            <m> {{ step1 }} </m>
+            <m>y = {{equation}}</m>
         </p>
         <p>
-            <m> {{ step2 }} </m>
+            <m>{{step_swap}}</m>
         </p>
         <p>
-            <m> {{ step3 }} </m>
+            <m>{{step_isolate}}</m>
         </p>
         <p>
-            <m> {{ step4 }} </m>
+            <m>{{step_cube}}</m>
         </p>
-        <p>Expanding the binomial cubed:</p>
         <p>
-            <m> {{ step5 }} </m>
+            <m>{{step_solve}}</m>
+        </p>
+        <p>
+            <m>\boxed{ {{factored_ans}} }</m>
+        </p>
+        <p>
+            <strong>OR</strong>
+        </p>
+        <p>
+            <m>= {{exp_step1}}</m>
+        </p>
+        <p>
+            <m>\boxed{ {{expanded_ans}} }</m>
         </p>
     </outtro>
 </knowl>

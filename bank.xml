@@ -59,7 +59,21 @@ Find the inverse of a cube root function.
             <description>
 ASSESSMENT QUESTION :Find the vertex of a quadratic function (projectile motion application).</description>
         </outcome>
-        <outcome>
+         <outcome>
+            <title>Midterm #8</title>
+            <slug>M8</slug>
+            <path>outcomes/M8</path>
+            <description>
+Function Composition</description>
+        </outcome>
+       <outcome>
+         <outcome>
+            <title>Midterm #9</title>
+            <slug>M9</slug>
+            <path>outcomes/M9</path>
+            <description>Difference Quotient
+</description>
+        </outcome>
             <title>Sample Image Outcome</title>
             <slug>IMG1</slug>
             <path>outcomes/IMG1</path>

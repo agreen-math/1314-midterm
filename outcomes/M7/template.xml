@@ -1,50 +1,49 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
-    <content>
+    <intro>
         <p>Suppose a rocket carrying fireworks is launched from a hill {{ h0 }} feet above a lake. The rocket's height <m>h</m> (in feet) above the lake at time <m>t</m> (in seconds) is given by</p>
         <p>
             <m>{{ equation }}</m>
         </p>
-        <list>
-            <item>
-                <content>
-                    <p>When will the rocket reach its maximum height?</p>
-                </content>
-                <outtro>
-                    <p>SOLUTION</p>
-                    <p>
-                        <m>{{ part_a_setup }} = {{ part_a_simplify }} = {{ part_a_ans }}</m>
-                    </p>
-                    <p><m>{{ part_a_ans }}</m> sec</p>
-                </outtro>
-            </item>
-            <item>
-                <content>
-                    <p>What is the maximum height the rocket will reach?</p>
-                </content>
-                <outtro>
-                    <p>SOLUTION</p>
-                    <p>
-                        <m>{{ part_b_setup }}</m>
-                    </p>
-                    <p>
-                        <m>{{ part_b_simplify }}</m>
-                    </p>
-                    <p>
-                        <m>= {{ part_b_ans }}</m>
-                    </p>
-                    <p><m>{{ part_b_ans }}</m> ft</p>
-                </outtro>
-            </item>
-            <item>
-                <content>
-                    <p>Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.</p>
-                </content>
-                <outtro>
-                    <p>SOLUTION</p>
-                    <p>{{ sentence }}</p>
-                </outtro>
-            </item>
-        </list>
-    </content>
+    </intro>
+    <knowl>
+        <content>
+            <p>When will the rocket reach its maximum height?</p>
+        </content>
+        <outtro>
+            <p>SOLUTION</p>
+            <p>
+                <m>{{ part_a_setup }} = {{ part_a_simplify }}</m>
+            </p>
+            <p>
+                <m>\boxed{t = {{ part_a_ans }} \text{ sec}}</m>
+            </p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>What is the maximum height the rocket will reach?</p>
+        </content>
+        <outtro>
+            <p>SOLUTION</p>
+            <p>
+                <m>{{ part_b_setup }}</m>
+            </p>
+            <p>
+                <m>{{ part_b_simplify }}</m>
+            </p>
+            <p>
+                <m>\boxed{h = {{ part_b_ans }} \text{ ft}}</m>
+            </p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.</p>
+        </content>
+        <outtro>
+            <p>SOLUTION</p>
+            <p>{{ sentence }}</p>
+        </outtro>
+    </knowl>
 </knowl>

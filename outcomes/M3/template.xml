@@ -2,10 +2,32 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <content>
         <p>Solve for all solutions. Identify any extraneous solutions.</p>
-        <p> <m>{{equation}}</m></p>
+        <p>
+            <m>{{equation}}</m>
+        </p>
     </content>
     <outtro>
-        <p><m>x = \frac{-({{b}}) \pm \sqrt{12}i}{2}</m></p>
-        <p><m>{{solutions}}</m></p>
+        <p>SOLUTION</p>
+        <p>
+            <m>{{step1}}</m>
+        </p>
+        <p>
+            <m>{{step2}}</m>
+        </p>
+        <p>
+            <m>{{step3}}</m>
+        </p>
+        <p>
+            <m>{{step4}}</m>
+        </p>
+        <p>
+            <m>{{step5}}</m>
+        </p>
+        <p>
+            <m>\boxed{x = {{final_ans}}}</m>
+        </p>
+        <p>
+            (No extraneous solutions)
+        </p>
     </outtro>
 </knowl>
