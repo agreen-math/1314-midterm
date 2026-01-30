@@ -43,7 +43,23 @@ Solve a radical equation with no extraneous solutions.
             <description>
 Solve a rational equation with one extraneous solution.
             </description>
-        </outcome>        <outcome>
+        </outcome>
+        <outcome>
+            <title>Midterm #6</title>
+            <slug>M6</slug>
+            <path>outcomes/M6</path>
+            <description>
+Find the inverse of a cube root function.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Midterm #7</title>
+            <slug>M7</slug>
+            <path>outcomes/M7</path>
+            <description>
+ASSESSMENT QUESTION :Find the vertex of a quadratic function (projectile motion application).</description>
+        </outcome>
+        <outcome>
             <title>Sample Image Outcome</title>
             <slug>IMG1</slug>
             <path>outcomes/IMG1</path>
