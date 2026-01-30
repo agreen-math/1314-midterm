@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>
+            Consider the function:
+        </p>
+        <p>
+            <m>{{f_tex}}</m>
+        </p>
+    </intro>
+    <content>
+        <p>
+            Find the following properties:
+        </p>
+        <list>
+            <item><p>Vertex</p></item>
+            <item><p>Axis of Symmetry</p></item>
+            <item><p><m>x</m>-intercepts</p></item>
+            <item><p><m>y</m>-intercept</p></item>
+            <item><p>Domain</p></item>
+            <item><p>Range</p></item>
+        </list>
+    </content>
+    <outtro>
+        <p>SOLUTION</p>
+        <p>
+            <m>\textbf{Direction: } \text{Opens {{opens}}}</m>
+        </p>
+        <p>
+            <m>\textbf{Vertex: } {{vertex}}</m>
+        </p>
+        <p>
+            <m>\textbf{Axis of Symmetry: } {{axis}}</m>
+        </p>
+        <p>
+            <m>\textbf{x-intercepts:}</m>
+        </p>
+        <p>
+            <m>{{x_step1}}</m>
+        </p>
+        <p>
+            <m>{{x_step2}}</m>
+        </p>
+        <p>
+            <m>{{x_step4}}</m>
+        </p>
+        <p>
+            <m>\boxed{ {{x_ints}} }</m>
+        </p>
+
+        <p>
+            <m>\textbf{y-intercept:}</m>
+        </p>
+        <p>
+            <m>= {{y_step1}}</m>
+        </p>
+        <p>
+            <m>= {{y_step2}}</m>
+        </p>
+        <p>
+            <m>= {{y_step3}}</m>
+        </p>
+        <p>
+            <m>\boxed{ {{y_int}} }</m>
+        </p>    <p>
+            <m>\textbf{Domain: } {{domain}}</m>
+        </p>
+        <p>
+            <m>\textbf{Range: } {{range}}</m>
+        </p>
+    </outtro>
+</knowl>

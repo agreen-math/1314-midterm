@@ -74,6 +74,13 @@ Function Composition</description>
             <description>Difference Quotient
 </description>
         </outcome>
+        <outcome>
+            <title>Midterm #10</title>
+            <slug>M10</slug>
+            <path>outcomes/M10</path>
+            <description>Properties of Quadratic Functions
+</description>
+        </outcome>
             <title>Sample Image Outcome</title>
             <slug>IMG1</slug>
             <path>outcomes/IMG1</path>
