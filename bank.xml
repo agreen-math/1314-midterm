@@ -5,14 +5,45 @@
     <url>https://checkit.clontz.org</url>
     <outcomes>
         <outcome>
-            <title>Sample Outcome</title>
-            <slug>EX1</slug>
-            <path>outcomes/EX1</path>
+            <title>Midterm #1</title>
+            <slug>M1</slug>
+            <path>outcomes/M1</path>
             <description>
-Simplify the sum of two monomials.
+Evaluate a quadratic function.
             </description>
         </outcome>
         <outcome>
+            <title>Midterm #2</title>
+            <slug>M2</slug>
+            <path>outcomes/M2</path>
+            <description>
+Find the discriminant.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Midterm #3</title>
+            <slug>M3</slug>
+            <path>outcomes/M3</path>
+            <description>
+Solve a quadratic equation with complex solutions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Midterm #4</title>
+            <slug>M4</slug>
+            <path>outcomes/M4</path>
+            <description>
+Solve a radical equation with no extraneous solutions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Midterm #5</title>
+            <slug>M5</slug>
+            <path>outcomes/M5</path>
+            <description>
+Solve a rational equation with one extraneous solution.
+            </description>
+        </outcome>        <outcome>
             <title>Sample Image Outcome</title>
             <slug>IMG1</slug>
             <path>outcomes/IMG1</path>

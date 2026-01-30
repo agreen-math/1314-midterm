@@ -1,0 +1,26 @@
+<exercise>
+    <title>Radical Equations</title>
+    <statement>
+        <p>Solve for all solutions. Identify any extraneous solutions.</p>
+        <p>
+            <m> {{ equation }} </m>
+        </p>
+    </statement>
+    <answer>
+        <m>x = {{ x }}</m>
+    </answer>
+    <solution>
+        <p>
+            <m> {{ step1 }} </m>
+        </p>
+        <p>
+            <m> {{ step2 }} </m>
+        </p>
+        <p>
+            <m> {{ step3 }} </m>
+        </p>
+        <p>
+            <m> {{ step4 }} </m>
+        </p>
+    </solution>
+</exercise>

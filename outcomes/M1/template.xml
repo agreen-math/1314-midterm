@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>Evaluate the function <m>f(x) = {{f}}</m>.</p>
+    </intro>
+    <knowl>
+        <content>
+            <p>Find <m>f({{val_a}})</m>.</p>
+        </content>
+        <outtro>
+            <p>Grading Step (Substitution): <m>{{step_a}}</m></p>
+            <p>Final Result: <m>f({{val_a}}) = {{ans_a}}</m></p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>Find <m>f(-x)</m>.</p>
+        </content>
+        <outtro>
+            <p>Grading Step (Substitution): <m>{{step_b}}</m></p>
+            <p>Final Result: <m>f(-x) = {{ans_b}}</m></p>
+        </outtro>
+    </knowl>
+    <knowl>
+        <content>
+            <p>Find <m>f(x + a)</m>.</p>
+        </content>
+        <outtro>
+            <p>Grading Step (Substitution): <m>{{step_c}}</m></p>
+            <p>Final Result: <m>f(x + a) = {{ans_c}}</m></p>
+        </outtro>
+    </knowl>
+</knowl>

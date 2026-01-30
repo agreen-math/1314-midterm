@@ -2,3 +2,12 @@ assets/**/generated
 assets/bank.json
 *.ipynb.sage-jupyter2
 dashboard.ipynb
+
+# --- Added for stability ---
+# Ignore the generated website
+docs/
+
+# Ignore compiled python files (prevents ghost code)
+__pycache__/
+*.pyc
+outcomes/**/__pycache__
