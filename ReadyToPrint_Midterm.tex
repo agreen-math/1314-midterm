@@ -1,0 +1,365 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{paracol}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\newcommand{\ci}{\textbf{Chapter 1}}
+\newcommand{\cii}{\textbf{Chapter 2}}
+\newcommand{\ciii}{\textbf{Chapter 3}}
+\newcommand{\civ}{\textbf{Chapter 4}}
+\newcommand{\cv}{\textbf{Chapters 5 and 6}}
+
+\setlength\answerskip{2ex}
+\setlength\answerlinelength{3in}
+
+% Toggle solutions
+%\printsolutions
+\noprintsolutions
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{Math 1314}{Midterm Exam (WEB)}{Fall 2025}
+\runningheader{Math 1314}{Midterm Exam (WEB)}{Fall 2025}
+\runningheadrule
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+\begin{document}
+
+\noindent{Number of Questions: \numquestions\hspace{\stretch{1}} Point Total: \numpoints}
+\begin{questions}
+\question Evaluate the function \(f(x) = -x^{2} + 6 \, x - 1\).\\\begin{solution}\ci\end{solution}
+
+\begin{parts}
+  \part[3] Find \(f(-5)\).
+
+\begin{solution}
+\(-1(-5)^2 + 6(-5) + -1\)
+
+\(\boxed{f(-5) = -56}\)
+\end{solution}  \vspace{\stretch{1}} \\ \answerline
+  \part[3] Find \(f(-x)\).
+
+\begin{solution}
+\(-1(-x)^2 + 6(-x) + -1\)
+
+\(\boxed{f(-x) = -x^{2} - 6 \, x - 1}\)
+\end{solution}  \vspace{\stretch{1}} \\ \answerline
+  \part[4] Find \(f(x + a)\).
+
+\begin{solution}
+\(-1(x+a)^2 + 6(x+a) + -1\)
+
+\(\boxed{f(x + a) = -a^{2} - 2 \, a x - x^{2} + 6 \, a + 6 \, x - 1}\)
+\end{solution}  \vspace{\stretch{1}} \\ \answerline
+\end{parts}
+
+\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions.\\\begin{solution}\ciii\end{solution} \vspace{\stretch{3}}\\
+number of solutions: \fillin \hspace{\stretch{1}} type of solutions: \fillin[][2.5in] \newpage
+% Original: Determine the number and type of solutions for the following equation: 
+
+ \(x^{2} + 9 \, x - 3 = -2 \, x\) 
+
+\begin{solution}
+\(1x^2 + (11)x + -3 = 0\) 
+
+ \(\Delta = (11)^2 - 4(1)(-3)\) 
+
+ \(\Delta = 133\) 
+
+ \(\boxed{\text{ two solutions, unequal real roots }}\)
+\end{solution}
+
+\uplevel{For the following questions, solve for \textbf{all} solutions. Identify any extraneous solutions.}
+\question[10] Solve: Solve for all solutions. Identify any extraneous solutions.
+
+ \(x^{2} - 4 \, x + 7 = 0\) 
+
+\begin{solution}
+\(x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(7)}}{2(1)}\) 
+
+ \(= \frac{4 \pm \sqrt{16 - 28}}{2}\) 
+
+ \(= \frac{4 \pm \sqrt{-12}}{2}\) 
+
+ \(= \frac{4 \pm 2i\sqrt{3}}{2}\) 
+
+ \(= \frac{2(2 \pm i\sqrt{3})}{2}\) 
+
+ \(\boxed{x = 2 \pm i\sqrt{3}}\) 
+
+ (No extraneous solutions)
+\end{solution}\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline
+
+\question[10] Solve: Solve for all solutions. Identify any extraneous solutions.
+
+ \(\sqrt{x + 9} - 9 = -7\) 
+
+\begin{solution}
+\(\sqrt{x + 9} = 2\) 
+
+ \(x + 9 = 4\) 
+
+ \(x = 4 - 9\) 
+
+ \(\boxed{x = -5}\) 
+
+ (No extraneous solutions)
+\end{solution}\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline
+
+\question[10] Solve: Solve the rational equation for all solutions. Identify any extraneous solutions. 
+
+ \(\displaystyle \frac{x}{x + 2} - \frac{12}{(x + 2)(x - 4)} = \frac{-15}{x - 4}\) 
+
+\begin{solution}
+\(x(x - 4) - 12 = -15(x + 2)\) 
+
+ \(x^{2} + 11 \, x + 18 = 0\) 
+
+ \((x + 2)(x + 9) = 0\) 
+
+ \(x = -9, \quad x = -2\) 
+
+ \(x = -2 \implies \text{Extraneous}\) 
+
+ \(\boxed{x = -9}\)
+\end{solution}\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline \newpage
+
+\question[10] Given that the function is one-to-one, find the inverse function \(f^{-1}(x)\). 
+
+ \(f(x) = \sqrt[3]{x + 1} - 1\) 
+
+\begin{solution}
+\(y = f(x) = \sqrt[3]{x + 1} - 1\) 
+
+ \(x = \sqrt[3]{y + 1} - 1\) 
+
+ \(x + 1 = \sqrt[3]{y + 1}\) 
+
+ \((x + 1)^3 = y + 1\) 
+
+ \(y = (x + 1)^3 - 1\) 
+
+ \(\boxed{ f^{-1}(x) = (x + 1)^3 - 1 }\) 
+
+  
+
+ \(= (x + 1)(x^2 + 2x + 1) - 1\) 
+
+ \(\boxed{ f^{-1}(x) = x^{3} + 3 \, x^{2} + 3 \, x }\)
+\end{solution}\\\begin{solution}\ci\end{solution} \vspace{\stretch{2}}\\\,\answerline \newpage
+
+\question Suppose a rocket carrying fireworks is launched from a hill 69 feet above a lake. The rocket's height \(h\) (in feet) above the lake at time \(t\) (in seconds) is given by
+
+ \(h(t) = -16t^2 + 96t + 69\)
+\begin{parts}
+  \part[2] When will the rocket reach its maximum height?
+
+\begin{solution}
+\(t = \frac{-96}{2(-16)} = \frac{-96}{-32}\) 
+
+ \(\boxed{t = 3 \text{ sec}}\)
+\end{solution}  \fillwithlines{0.5in}
+  \part[2] What is the maximum height the rocket will reach?
+
+\begin{solution}
+\(h(3) = -16(3)^2 + 96(3) + 69\) 
+
+ \(= -144 + 288 + 69\) 
+
+ \(\boxed{h = 213 \text{ ft}}\)
+\end{solution}  \fillwithlines{0.5in}
+  \part[1] Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.
+
+\begin{solution}
+The rocket will reach a maximum height of 213 ft 3 seconds after launch.
+\end{solution}  \fillwithlines{0.5in}
+\end{parts}
+
+\question Find the following compositions:Given \(f(x) = 2 \, x\) and \(g(x) = -2 \, x^{2} + 3\), find the following:\\\begin{solution}\ci\end{solution}
+
+\begin{parts}
+  \part[6] \((f \circ g)(x)\)
+
+\begin{solution}
+\(f(g(x)) = 2(-2 \, x^{2} + 3)\) 
+
+ \(\boxed{ -4 \, x^{2} + 6 }\) 
+
+ERROR 1: \(g(f(x))\)
+
+ \(= -2(2 \, x)^2 + 3\) 
+
+ \(= -2(4 \, x^{2}) + 3\) 
+
+ \(\boxed{ -8 \, x^{2} + 3 }\) 
+
+ERROR 2: \(f(x) \cdot g(x)\)
+
+ \(= (2 \, x)(-2 \, x^{2} + 3)\) 
+
+ \(\boxed{ -4 \, x^{3} + 6 \, x }\)
+\end{solution}  \vspace{\stretch{1}} \\ \answerline
+  \part[4] \((f \circ f)(x)\)
+
+\begin{solution}
+\(f(f(x)) = 2(2 \, x)\) 
+
+ \(\boxed{ 4 \, x }\)
+\end{solution}  \vspace{\stretch{1}} \\ \answerline
+\end{parts} \newpage
+
+\question[5] Evaluate the difference quotient.\\\begin{solution}\ci\end{solution}
+Evaluate the difference quotient, \(\displaystyle{ \frac{f(x+h)-f(x)}{h}}\) , for \(f(x) = x^{2} - 3\). 
+
+\begin{solution}
+\(f(x+h) = 1(x+h)^2 - 3\) 
+
+ \(= 1(x^2 + 2xh + h^2) - 3\) 
+
+ \(= h^{2} + 2 \, h x + x^{2} - 3\) 
+
+ \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (h^{2} + 2 \, h x + x^{2} - 3) - (x^{2} - 3) }{h}}\) 
+
+ \(=\displaystyle{ \frac{ h^{2} + 2 \, h x }{h}}\) 
+
+ \(= \displaystyle{ \frac{ h(h + 2 \, x) }{h}}\) 
+
+ \(\boxed{ h + 2 \, x }\)
+\end{solution} \vspace{\stretch{1}} \\ \answerline \newpage
+
+\question[5] Find the vertex and properties.
+Consider the function: 
+
+ \(f(x) = \frac{1}{4}(x - 4)^2 -9\) 
+
+ Find the following properties: 
+
+\begin{itemize}
+\item
+Vertex
+
+\item
+Axis of Symmetry
+
+\item
+\(x\)-intercepts
+
+\item
+\(y\)-intercept
+
+\item
+Domain
+
+\item
+Range
+
+\end{itemize}
+\begin{solution}
+\(\textbf{Direction: } \text{Opens Up}\) 
+
+ \(\textbf{Vertex: } (4, -9)\) 
+
+ \(\textbf{Axis of Symmetry: } x = 4\) 
+
+ \(\textbf{x-intercepts:}\) 
+
+ \(\frac{1}{4}(x - 4)^2 -9 = 0\) 
+
+ \((x - 4)^2 = 36\) 
+
+ \(x = 4 \pm 6\) 
+
+ \(\boxed{ -2, 10 }\) 
+
+ \(\textbf{y-intercept:}\) 
+
+ \(= \frac{1}{4}(0 - 4)^2 -9\) 
+
+ \(= \frac{1}{4}(16) -9\) 
+
+ \(= 4 -9\) 
+
+ \(\boxed{ -5 }\) 
+
+ \(\textbf{Domain: } (-\infty, \infty)\) 
+
+ \(\textbf{Range: } [-9, \infty)\)
+\end{solution}
+
+\question[5] Use the characteristics to graph.
+A quadratic function has the characteristics given below. Use the axis of symmetry to generate two additional points, then use all five points to graph the function. 
+
+\begin{itemize}
+\item
+\(\text{Vertex: } (2, 1)\)
+
+\item
+\(x\text{-intercept: } 3\)
+
+\item
+\(y\text{-intercept: } -3\)
+
+\end{itemize}
+ \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture} 
+
+\begin{solution}
+\begin{multicols}{2}  
+
+\begin{itemize}
+\item
+\(\text{Vertex: } (2, 1)\)
+
+\item
+\(y\text{-intercept: } (0, -3)\)
+
+\item
+\(\text{Reflected } y\text{-int: } (4, -3)\)
+
+\item
+\(\text{Given Root: } (3, 0)\)
+
+\item
+\(\text{Reflected Root: } (1, 0)\)
+
+\end{itemize}
+ \columnbreak  
+
+ \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10,-10) rectangle (10,10); \draw[line width=1.5pt, blue!80!black, samples=100, domain=-10:10, <->] plot (\x, {-1.0*(\x - 2)^2 + 1}); \fill[blue] (2,1) circle (7pt); \fill[blue] (1,0) circle (7pt); \fill[blue] (3,0) circle (7pt); \fill[blue] (0,-3) circle (7pt); \fill[blue] (4,-3) circle (7pt); \end{tikzpicture} 
+
+ \end{multicols}
+\end{solution} \newpage
+
+\question[10] Identify transformations and graph.
+Use the table to identify the transformations described by \(g(x) = -f(x - 1) + 1\). 
+
+ Circle the option that applies and fill in the blanks as appropriate. Then apply these transformations to the graph of the function shown below. 
+
+ \(\renewcommand{\arraystretch}{3} \begin{array}{|l|l|} \hline \textbf{Horizontal Transformations} & \textbf{Vertical Transformations} \\ \hline \text{Reflection: YES or NO} & \text{Reflection: YES or NO} \\ \hline \text{Dilation: \underline{\hspace{2cm}} times as wide} & \text{Dilation: \underline{\hspace{2cm}} times as tall} \\ \hline \text{Translation: \underline{\hspace{2cm}} units LEFT or RIGHT} & \text{Translation: \underline{\hspace{2cm}} units UP or DOWN} \\ \hline \end{array}\) 
+
+ \noindent\makebox[\textwidth][c]{ \begin{minipage}{0.48\textwidth} \centering \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, black] (-2,1) -- (-1,2) -- (0,0) -- (1,4) -- (3,4);\fill[black] (-2,1) circle (5pt); \fill[black] (-1,2) circle (5pt); \fill[black] (0,0) circle (5pt); \fill[black] (1,4) circle (5pt); \fill[black] (3,4) circle (5pt); \end{tikzpicture} \end{minipage} \hfill \begin{minipage}{0.48\textwidth} \centering \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture} \end{minipage} } 
+
+\begin{solution}
+\begin{itemize}
+\item
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 1 units RIGHT.}\) 
+
+\item
+ \(\textbf{Vertical: } \text{Reflection: YES, Dilation: 1, Shift: 1 units UP.}\) 
+
+\end{itemize}
+
+
+ \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (-1,0) -- (0,-1) -- (1,1) -- (2,-3) -- (4,-3);\fill[blue] (-1,0) circle (5pt); \fill[blue] (0,-1) circle (5pt); \fill[blue] (1,1) circle (5pt); \fill[blue] (2,-3) circle (5pt); \fill[blue] (4,-3) circle (5pt); \end{tikzpicture}
+\end{solution} \newpage
+
+
+\end{questions}
+\end{document}
