@@ -2,13 +2,10 @@ import re
 import sys
 
 # ==========================================
-# 1. EXAM CONFIGURATION (The "Map")
+# 1. EXAM MAP (Order is strictly guaranteed)
 # ==========================================
-# This list corresponds 1-to-1 with the questions in your CheckIt bank order.
-# We don't need indices anymore; just the order 0, 1, 2... 
-
 EXAM_MAP = [
-    # --- Q1: Evaluate Function ---
+    # Q1: Evaluate Function (Parts)
     {
         "type": "parts",
         "points": [3, 3, 4],
@@ -16,43 +13,43 @@ EXAM_MAP = [
         "header_suffix": r"\\\begin{solution}\ci\end{solution}" + "\n",
         "part_spacing": r" \vspace{\stretch{1}} \\ \answerline"
     },
-    # --- Q2: Discriminant ---
+    # Q2: Discriminant (Single)
     {
         "type": "single",
         "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions.\\\begin{solution}\ciii\end{solution} \vspace{\stretch{3}}\\" + "\n" + r"number of solutions: \fillin \hspace{\stretch{1}} type of solutions: \fillin[][2.5in] \newpage" + "\n" + r"% Original: "
     },
-    # --- Q3: Quadratic ---
+    # Q3: Quadratic (Single)
     {
         "type": "single",
         "header": r"\uplevel{For the following questions, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n" + r"\question[10] Solve: ",
         "footer": r"\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline"
     },
-    # --- Q4: Radical ---
+    # Q4: Radical (Single)
     {
         "type": "single",
         "header": r"\question[10] Solve: ",
         "footer": r"\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline"
     },
-    # --- Q5: Rational ---
+    # Q5: Rational (Single)
     {
         "type": "single",
         "header": r"\question[10] Solve: ",
         "footer": r"\\\begin{solution}\cii\end{solution} \vspace{\stretch{1}}\\\,\answerline \newpage"
     },
-    # --- Q6: Inverse ---
+    # Q6: Inverse (Single)
     {
         "type": "single",
         "header": r"\question[10] ",
         "footer": r"\\\begin{solution}\ci\end{solution} \vspace{\stretch{2}}\\\,\answerline \newpage"
     },
-    # --- Q7: Rocket ---
+    # Q7: Rocket (Parts)
     {
         "type": "parts",
         "points": [2, 2, 1],
         "header_prefix": r"\question ",
-        "part_spacing": r" \fillwithlines{0.5in}" # Special spacing for Rocket
+        "part_spacing": r" \fillwithlines{0.5in}"
     },
-    # --- Q8: Composition ---
+    # Q8: Composition (Parts)
     {
         "type": "parts",
         "points": [6, 4],
@@ -61,30 +58,34 @@ EXAM_MAP = [
         "part_spacing": r" \vspace{\stretch{1}} \\ \answerline",
         "footer": r" \newpage"
     },
-    # --- Q9: Difference Quotient ---
+    # Q9: Difference Quotient (Single)
     {
         "type": "single",
         "header": r"\question[5] Evaluate the difference quotient.\\\begin{solution}\ci\end{solution}" + "\n",
         "footer": r" \vspace{\stretch{1}} \\ \answerline \newpage"
     },
-    # --- Q10: Vertex ---
+    # Q10: Vertex (Single)
     {
         "type": "single",
         "header": r"\question[5] Find the vertex and properties." + "\n"
     },
-    # --- Q11: Graphing ---
+    # Q11: Graphing (Single)
     {
         "type": "single",
         "header": r"\question[5] Use the characteristics to graph." + "\n",
         "footer": r" \newpage"
     },
-    # --- Q12: Transformations ---
+    # Q12: Transformations (Single)
     {
         "type": "single",
         "header": r"\question[10] Identify transformations and graph." + "\n",
         "footer": r" \newpage"
     }
 ]
+
+# ==========================================
+# 2. CONFIGURATION & HELPERS
+# ==========================================
 
 PREAMBLE = r"""\documentclass[addpoints]{exam}
 
@@ -130,15 +131,10 @@ POSTAMBLE = r"""
 \end{document}
 """
 
-# ==========================================
-# 2. PARSING HELPERS
-# ==========================================
-
 def get_braced_content(text, start_index=0):
     """
-    Given text and the index of an opening brace '{', 
-    finds the matching closing brace '}' handling nesting.
-    Returns: (content_inside, index_after_closing_brace)
+    Finds the content of the curly brace group starting at start_index.
+    Returns (content, end_index).
     """
     balance = 1
     i = start_index + 1
@@ -153,13 +149,13 @@ def get_braced_content(text, start_index=0):
 
 def clean_solutions(content):
     """
-    Converts CheckIt \stxOuttro{SOLUTION ...} to \begin{solution}...\end{solution}
+    Converts \stxOuttro{ SOLUTION ... } into \begin{solution}...\end{solution}.
     """
-    # Remove junk macros
+    # Remove junk
     content = re.sub(r'\\stxTitle\{.*?\}', '', content)
     
     # Process Outtros
-    while r'\stxOuttro' in content:
+    while True:
         match = re.search(r'\\stxOuttro\s*\{', content)
         if not match: break
         
@@ -168,48 +164,52 @@ def clean_solutions(content):
         
         inner_text, end_pos = get_braced_content(content, open_brace_pos)
         
-        # Clean "SOLUTION" label
-        inner_text = re.sub(r'^\s*SOLUTION\s*', '', inner_text, flags=re.IGNORECASE).strip()
+        # Remove "SOLUTION" header inside
+        inner_text = re.sub(r'^\s*SOLUTION\s*', '', inner_text, flags=re.IGNORECASE | re.MULTILINE).strip()
         
+        # Wrap in exam solution environment
         new_block = r'\begin{solution}' + "\n" + inner_text + "\n" + r'\end{solution}'
+        
         content = content[:start_pos] + new_block + content[end_pos:]
         
     return content.strip()
 
 def parse_checkit_item(raw_block):
     """
-    Parses a top-level CheckIt item block.
-    Returns a dict: {'type': 'single'|'parts', 'content': ..., 'parts': [...], 'intro': ...}
+    Parses a top-level item block (separated by '%%%%% SpaTeXt Commands %%%%%').
+    Detects if it has parts (enumerate) or is single.
     """
-    # 1. Extract the main \stxKnowl content
+    # 1. Extract the Outer Knowl Content
     match = re.search(r'\\stxKnowl\s*\{', raw_block)
-    if not match:
-        return None
+    if not match: return None
         
     outer_content, _ = get_braced_content(raw_block, match.end() - 1)
     
-    # 2. Check structure (Single vs Parts)
+    # 2. Check for Enumerate (Parts)
     if r'\begin{enumerate}' in outer_content:
-        # Split into Intro and Parts
-        parts = re.split(r'\\begin\{enumerate\}', outer_content, 1)
-        intro_text = parts[0].strip()
+        # Split Intro from Parts
+        split_parts = re.split(r'\\begin\{enumerate\}', outer_content, 1)
+        intro_text = split_parts[0].strip()
         
-        # Isolate the enumerate body
-        enum_body = parts[1].split(r'\end{enumerate}')[0]
+        # Get the body inside enumerate
+        enum_body = split_parts[1].split(r'\end{enumerate}')[0]
         
-        # Split by \item to get parts
-        # We ignore the first split if it's empty
+        # Split items
         raw_parts = re.split(r'\\item', enum_body)
         clean_parts = []
+        
         for p in raw_parts:
             if not p.strip(): continue
             
-            # Peel off inner \stxKnowl if present (standard CheckIt structure)
+            # CRITICAL: Each part is wrapped in its own \stxKnowl
             p_match = re.search(r'\\stxKnowl\s*\{', p)
             if p_match:
-                p_content, _ = get_braced_content(p, p_match.end()-1)
-                clean_parts.append(clean_solutions(p_content))
+                # Extract content of this specific part
+                part_content, _ = get_braced_content(p, p_match.end()-1)
+                # Convert solution INSIDE this part
+                clean_parts.append(clean_solutions(part_content))
             else:
+                # Fallback if structure is weird
                 clean_parts.append(clean_solutions(p))
                 
         return {
@@ -218,6 +218,7 @@ def parse_checkit_item(raw_block):
             'parts': clean_parts
         }
     else:
+        # Single Question
         return {
             'type': 'single',
             'content': clean_solutions(outer_content)
@@ -231,65 +232,63 @@ def process_exam(input_file, output_file):
     with open(input_file, 'r') as f:
         full_text = f.read()
 
-    # 1. Split by the User's Magic Separator
-    # This guarantees we get exactly the Question Blocks
+    # Split by the user's guaranteed delimiter
     separator = r'\\item\s*%%%%% SpaTeXt Commands %%%%%'
     blocks = re.split(separator, full_text)
     
-    # Remove preamble (chunk 0)
+    # Skip preamble (chunk 0)
     if len(blocks) > 0:
         blocks = blocks[1:]
     
     print(f"Found {len(blocks)} Question Blocks.")
     
-    # 2. Generate LaTeX
     final_output = []
     
-    # Iterate safely up to the number of configured questions
+    # Process blocks in order according to EXAM_MAP
     count = min(len(blocks), len(EXAM_MAP))
     
     for i in range(count):
         parsed = parse_checkit_item(blocks[i])
-        config = EXAM_MAP[i]
+        if not parsed: continue
         
+        config = EXAM_MAP[i]
         q_latex = ""
         
-        # Handle 'Parts' type questions
         if parsed['type'] == 'parts':
-            # Header + Intro
-            q_latex += config.get('header_prefix', "") 
+            # Intro
+            q_latex += config.get('header_prefix', "")
             q_latex += parsed['intro']
-            q_latex += config.get('header_suffix', "") # e.g. Solution bucket
+            q_latex += config.get('header_suffix', "")
             
+            # Parts Environment
             q_latex += "\n" + r"\begin{parts}"
             
-            # Add parts
-            points = config.get('points', [])
+            pts = config.get('points', [])
             spacing = config.get('part_spacing', "")
             
-            for p_idx, part_content in enumerate(parsed['parts']):
-                pt_val = points[p_idx] if p_idx < len(points) else 1
-                q_latex += f"\n  \\part[{pt_val}] {part_content} {spacing}"
+            # Loop through parts found
+            for p_idx, part_text in enumerate(parsed['parts']):
+                pt_val = pts[p_idx] if p_idx < len(pts) else 1
+                q_latex += f"\n  \\part[{pt_val}] {part_text} {spacing}"
             
             q_latex += "\n" + r"\end{parts}"
             q_latex += config.get('footer', "")
-
-        # Handle 'Single' type questions
-        else:
+            
+        else: # Single
             q_latex += config.get('header', "")
             q_latex += parsed['content']
             q_latex += config.get('footer', "")
             
         final_output.append(q_latex)
 
-    # 3. Write
+    # Write File
     with open(output_file, 'w') as f:
         f.write(PREAMBLE)
         for q in final_output:
             f.write(q + "\n\n")
         f.write(POSTAMBLE)
 
-    print(f"Successfully generated {len(final_output)} questions to {output_file}")
+    print(f"Success! Processed {len(final_output)} questions.")
 
 if __name__ == "__main__":
     process_exam("main.tex", "ReadyToPrint_Midterm.tex")

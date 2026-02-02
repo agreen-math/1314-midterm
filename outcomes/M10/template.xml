@@ -2,16 +2,13 @@
 <knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
     <intro>
         <p>
-            Consider the function:
+            Find each of the properties below for the given function:
         </p>
         <p>
             <m>{{f_tex}}</m>
         </p>
     </intro>
     <content>
-        <p>
-            Find the following properties:
-        </p>
         <list>
             <item><p>Vertex</p></item>
             <item><p>Axis of Symmetry</p></item>

@@ -1,11 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Welcome to Overleaf --- just edit your LaTeX on the left,
-% and we'll compile it for you on the right. If you open the
-% 'Share' menu, you can invite other users to edit at the same
-% time. See www.overleaf.com/learn for more info. Enjoy!
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,7 +8,7 @@
 CheckIt Assessment
 }
 \newcommand{\assessmentVersion}{
-Version 1770002163466
+Version 1770005667924
 }
 \newcommand{\assessmentInstructions}{
 Do not use any unapproved aids while taking this assessment.
@@ -68,19 +60,19 @@ in the space provided.
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
-Evaluate the function \(f(x) = -x^{2} + 6 \, x - 1\).
+Evaluate the function \(f(x) = 5 \, x^{2} + 8 \, x - 5\).
 
 \begin{enumerate}
 \item
 \stxKnowl{
-Find \(f(-5)\).
+Find \(f(-8)\).
 
 \stxOuttro{
 SOLUTION
 
-\(-1(-5)^2 + 6(-5) + -1\)
+\(5(-8)^2 + 8(-8) + -5\)
 
-\(\boxed{f(-5) = -56}\)
+\(\boxed{f(-8) = 251}\)
 
 }
 }
@@ -92,9 +84,9 @@ Find \(f(-x)\).
 \stxOuttro{
 SOLUTION
 
-\(-1(-x)^2 + 6(-x) + -1\)
+\(5(-x)^2 + 8(-x) + -5\)
 
-\(\boxed{f(-x) = -x^{2} - 6 \, x - 1}\)
+\(\boxed{f(-x) = 5 \, x^{2} - 8 \, x - 5}\)
 
 }
 }
@@ -106,9 +98,9 @@ Find \(f(x + a)\).
 \stxOuttro{
 SOLUTION
 
-\(-1(x+a)^2 + 6(x+a) + -1\)
+\(5(x+a)^2 + 8(x+a) + -5\)
 
-\(\boxed{f(x + a) = -a^{2} - 2 \, a x - x^{2} + 6 \, a + 6 \, x - 1}\)
+\(\boxed{f(x + a) = 5 \, a^{2} + 10 \, a x + 5 \, x^{2} + 8 \, a + 8 \, x - 5}\)
 
 }
 }
@@ -130,16 +122,16 @@ SOLUTION
 \stxKnowl{
  Determine the number and type of solutions for the following equation: 
 
- \(x^{2} + 9 \, x - 3 = -2 \, x\) 
+ \(3 \, x^{2} - 7 \, x - 1 = 6 \, x\) 
 
 \stxOuttro{
 SOLUTION
 
- \(1x^2 + (11)x + -3 = 0\) 
+ \(3x^2 + (-13)x + -1 = 0\) 
 
- \(\Delta = (11)^2 - 4(1)(-3)\) 
+ \(\Delta = (-13)^2 - 4(3)(-1)\) 
 
- \(\Delta = 133\) 
+ \(\Delta = 181\) 
 
  \(\boxed{\text{ two solutions, unequal real roots }}\) 
 
@@ -160,22 +152,22 @@ SOLUTION
 \stxKnowl{
 Solve for all solutions. Identify any extraneous solutions.
 
- \(x^{2} - 4 \, x + 7 = 0\) 
+ \(x^{2} - 10 \, x + 28 = 0\) 
 
 \stxOuttro{
 SOLUTION
 
- \(x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(7)}}{2(1)}\) 
+ \(x = \frac{-(-10) \pm \sqrt{(-10)^2 - 4(1)(28)}}{2(1)}\) 
 
- \(= \frac{4 \pm \sqrt{16 - 28}}{2}\) 
+ \(= \frac{10 \pm \sqrt{100 - 112}}{2}\) 
 
- \(= \frac{4 \pm \sqrt{-12}}{2}\) 
+ \(= \frac{10 \pm \sqrt{-12}}{2}\) 
 
- \(= \frac{4 \pm 2i\sqrt{3}}{2}\) 
+ \(= \frac{10 \pm 2i\sqrt{3}}{2}\) 
 
- \(= \frac{2(2 \pm i\sqrt{3})}{2}\) 
+ \(= \frac{2(5 \pm i\sqrt{3})}{2}\) 
 
- \(\boxed{x = 2 \pm i\sqrt{3}}\) 
+ \(\boxed{x = 5 \pm i\sqrt{3}}\) 
 
  (No extraneous solutions) 
 
@@ -196,18 +188,18 @@ SOLUTION
 \stxKnowl{
 Solve for all solutions. Identify any extraneous solutions.
 
- \(\sqrt{x + 9} - 9 = -7\) 
+ \(\sqrt{x + 46} - 3 = 4\) 
 
 \stxOuttro{
 SOLUTION
 
- \(\sqrt{x + 9} = 2\) 
+ \(\sqrt{x + 46} = 7\) 
 
- \(x + 9 = 4\) 
+ \(x + 46 = 49\) 
 
- \(x = 4 - 9\) 
+ \(x = 49 - 46\) 
 
- \(\boxed{x = -5}\) 
+ \(\boxed{x = 3}\) 
 
  (No extraneous solutions) 
 
@@ -226,24 +218,24 @@ SOLUTION
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
- Solve the rational equation for all solutions. Identify any extraneous solutions. 
+ Solve for all solutions. Identify any extraneous solutions. 
 
- \(\displaystyle \frac{x}{x + 2} - \frac{12}{(x + 2)(x - 4)} = \frac{-15}{x - 4}\) 
+ \(\displaystyle \frac{x}{x + 4} - \frac{20}{(x + 4)(x - 1)} = \frac{-3}{x - 1}\) 
 
 \stxOuttro{
 SOLUTION
 
- \(x(x - 4) - 12 = -15(x + 2)\) 
+ \(x(x - 1) - 20 = -3(x + 4)\) 
 
- \(x^{2} + 11 \, x + 18 = 0\) 
+ \(x^{2} + 2 \, x - 8 = 0\) 
 
- \((x + 2)(x + 9) = 0\) 
+ \((x + 4)(x - 2) = 0\) 
 
- \(x = -9, \quad x = -2\) 
+ \(x = 2, \quad x = -4\) 
 
- \(x = -2 \implies \text{Extraneous}\) 
+ \(x = -4 \implies \text{Extraneous}\) 
 
- \(\boxed{x = -9}\) 
+ \(\boxed{x = 2}\) 
 
 }
 }
@@ -262,28 +254,28 @@ SOLUTION
 \stxKnowl{
  Given that the function is one-to-one, find the inverse function \(f^{-1}(x)\). 
 
- \(f(x) = \sqrt[3]{x + 1} - 1\) 
+ \(f(x) = \sqrt[3]{x} - 1\) 
 
 \stxOuttro{
 SOLUTION
 
- \(y = f(x) = \sqrt[3]{x + 1} - 1\) 
+ \(y = f(x) = \sqrt[3]{x} - 1\) 
 
- \(x = \sqrt[3]{y + 1} - 1\) 
+ \(x = \sqrt[3]{y} - 1\) 
 
- \(x + 1 = \sqrt[3]{y + 1}\) 
+ \(x + 1 = \sqrt[3]{y}\) 
 
- \((x + 1)^3 = y + 1\) 
+ \((x + 1)^3 = y\) 
 
- \(y = (x + 1)^3 - 1\) 
+ \(y = (x + 1)^3\) 
 
- \(\boxed{ f^{-1}(x) = (x + 1)^3 - 1 }\) 
+ \(\boxed{ f^{-1}(x) = (x + 1)^3 }\) 
 
   
 
- \(= (x + 1)(x^2 + 2x + 1) - 1\) 
+ \(= (x + 1)(x^2 + 2x + 1)\) 
 
- \(\boxed{ f^{-1}(x) = x^{3} + 3 \, x^{2} + 3 \, x }\) 
+ \(\boxed{ f^{-1}(x) = x^{3} + 3 \, x^{2} + 3 \, x + 1 }\) 
 
 }
 }
@@ -300,9 +292,9 @@ SOLUTION
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
-Suppose a rocket carrying fireworks is launched from a hill 69 feet above a lake. The rocket's height \(h\) (in feet) above the lake at time \(t\) (in seconds) is given by
+Suppose a rocket carrying fireworks is launched from a hill 115 feet above a lake. The rocket's height \(h\) (in feet) above the lake at time \(t\) (in seconds) is given by
 
- \(h(t) = -16t^2 + 96t + 69\) 
+ \(h(t) = -16t^2 + 32t + 115\) 
 
 \begin{enumerate}
 \item
@@ -312,9 +304,9 @@ When will the rocket reach its maximum height?
 \stxOuttro{
 SOLUTION
 
- \(t = \frac{-96}{2(-16)} = \frac{-96}{-32}\) 
+ \(t = \frac{-32}{2(-16)} = \frac{-32}{-32}\) 
 
- \(\boxed{t = 3 \text{ sec}}\) 
+ \(\boxed{t = 1 \text{ sec}}\) 
 
 }
 }
@@ -326,11 +318,11 @@ What is the maximum height the rocket will reach?
 \stxOuttro{
 SOLUTION
 
- \(h(3) = -16(3)^2 + 96(3) + 69\) 
+ \(h(1) = -16(1)^2 + 32(1) + 115\) 
 
- \(= -144 + 288 + 69\) 
+ \(= -16 + 32 + 115\) 
 
- \(\boxed{h = 213 \text{ ft}}\) 
+ \(\boxed{h = 131 \text{ ft}}\) 
 
 }
 }
@@ -342,7 +334,7 @@ Interpret your results for the previous two questions in one or more complete se
 \stxOuttro{
 SOLUTION
 
-The rocket will reach a maximum height of 213 ft 3 seconds after launch.
+The rocket will reach a maximum height of 131 ft 1 seconds after launch.
 
 }
 }
@@ -362,7 +354,7 @@ The rocket will reach a maximum height of 213 ft 3 seconds after launch.
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
- Given \(f(x) = 2 \, x\) and \(g(x) = -2 \, x^{2} + 3\), find the following: 
+ Given \(f(x) = -2 \, x\) and \(g(x) = -3 \, x^{2} + 6\), find the following: 
 
 \begin{enumerate}
 \item
@@ -372,23 +364,23 @@ The rocket will reach a maximum height of 213 ft 3 seconds after launch.
 \stxOuttro{
 SOLUTION
 
- \(f(g(x)) = 2(-2 \, x^{2} + 3)\) 
+ \(f(g(x)) = -2(-3 \, x^{2} + 6)\) 
 
- \(\boxed{ -4 \, x^{2} + 6 }\) 
+ \(\boxed{ 6 \, x^{2} - 12 }\) 
 
 ERROR 1: \(g(f(x))\)
 
- \(= -2(2 \, x)^2 + 3\) 
+ \(= -3(-2 \, x)^2 + 6\) 
 
- \(= -2(4 \, x^{2}) + 3\) 
+ \(= -3(4 \, x^{2}) + 6\) 
 
- \(\boxed{ -8 \, x^{2} + 3 }\) 
+ \(\boxed{ -12 \, x^{2} + 6 }\) 
 
 ERROR 2: \(f(x) \cdot g(x)\)
 
- \(= (2 \, x)(-2 \, x^{2} + 3)\) 
+ \(= (-2 \, x)(-3 \, x^{2} + 6)\) 
 
- \(\boxed{ -4 \, x^{3} + 6 \, x }\) 
+ \(\boxed{ 6 \, x^{3} - 12 \, x }\) 
 
 }
 }
@@ -400,7 +392,7 @@ ERROR 2: \(f(x) \cdot g(x)\)
 \stxOuttro{
 SOLUTION
 
- \(f(f(x)) = 2(2 \, x)\) 
+ \(f(f(x)) = -2(-2 \, x)\) 
 
  \(\boxed{ 4 \, x }\) 
 
@@ -422,24 +414,24 @@ SOLUTION
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
- Evaluate the difference quotient, \(\displaystyle{ \frac{f(x+h)-f(x)}{h}}\) , for \(f(x) = x^{2} - 3\). 
+ Evaluate the difference quotient, \(\displaystyle{ \frac{f(x+h)-f(x)}{h}}\) , for \(f(x) = 2 \, x^{2} - 2\). 
 
 \stxOuttro{
 SOLUTION
 
- \(f(x+h) = 1(x+h)^2 - 3\) 
+ \(f(x+h) = 2(x+h)^2 - 2\) 
 
- \(= 1(x^2 + 2xh + h^2) - 3\) 
+ \(= 2(x^2 + 2xh + h^2) - 2\) 
 
- \(= h^{2} + 2 \, h x + x^{2} - 3\) 
+ \(= 2 \, h^{2} + 4 \, h x + 2 \, x^{2} - 2\) 
 
- \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (h^{2} + 2 \, h x + x^{2} - 3) - (x^{2} - 3) }{h}}\) 
+ \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (2 \, h^{2} + 4 \, h x + 2 \, x^{2} - 2) - (2 \, x^{2} - 2) }{h}}\) 
 
- \(=\displaystyle{ \frac{ h^{2} + 2 \, h x }{h}}\) 
+ \(=\displaystyle{ \frac{ 2 \, h^{2} + 4 \, h x }{h}}\) 
 
- \(= \displaystyle{ \frac{ h(h + 2 \, x) }{h}}\) 
+ \(= \displaystyle{ \frac{ h(2 \, h + 4 \, x) }{h}}\) 
 
- \(\boxed{ h + 2 \, x }\) 
+ \(\boxed{ 2 \, h + 4 \, x }\) 
 
 }
 }
@@ -458,7 +450,7 @@ SOLUTION
 \stxKnowl{
  Consider the function: 
 
- \(f(x) = \frac{1}{4}(x - 4)^2 -9\) 
+ \(f(x) = \frac{1}{4}(x - 6)^2 -9\) 
 
  Find the following properties: 
 
@@ -487,29 +479,29 @@ SOLUTION
 
  \(\textbf{Direction: } \text{Opens Up}\) 
 
- \(\textbf{Vertex: } (4, -9)\) 
+ \(\textbf{Vertex: } (6, -9)\) 
 
- \(\textbf{Axis of Symmetry: } x = 4\) 
+ \(\textbf{Axis of Symmetry: } x = 6\) 
 
  \(\textbf{x-intercepts:}\) 
 
- \(\frac{1}{4}(x - 4)^2 -9 = 0\) 
+ \(\frac{1}{4}(x - 6)^2 -9 = 0\) 
 
- \((x - 4)^2 = 36\) 
+ \((x - 6)^2 = 36\) 
 
- \(x = 4 \pm 6\) 
+ \(x = 6 \pm 6\) 
 
- \(\boxed{ -2, 10 }\) 
+ \(\boxed{ 0, 12 }\) 
 
  \(\textbf{y-intercept:}\) 
 
- \(= \frac{1}{4}(0 - 4)^2 -9\) 
+ \(= \frac{1}{4}(0 - 6)^2 -9\) 
 
- \(= \frac{1}{4}(16) -9\) 
+ \(= \frac{1}{4}(36) -9\) 
 
- \(= 4 -9\) 
+ \(= 9 -9\) 
 
- \(\boxed{ -5 }\) 
+ \(\boxed{ 0 }\) 
 
  \(\textbf{Domain: } (-\infty, \infty)\) 
 
@@ -534,13 +526,13 @@ SOLUTION
 
 \begin{itemize}
 \item
-\(\text{Vertex: } (2, 1)\)
+\(\text{Vertex: } (2, 2)\)
 
 \item
-\(x\text{-intercept: } 3\)
+\(x\text{-intercept: } 0\)
 
 \item
-\(y\text{-intercept: } -3\)
+\(y\text{-intercept: } 0\)
 
 \end{itemize}
  \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture} 
@@ -552,24 +544,24 @@ SOLUTION
 
 \begin{itemize}
 \item
-\(\text{Vertex: } (2, 1)\)
+\(\text{Vertex: } (2, 2)\)
 
 \item
-\(y\text{-intercept: } (0, -3)\)
+\(y\text{-intercept: } (0, 0)\)
 
 \item
-\(\text{Reflected } y\text{-int: } (4, -3)\)
+\(\text{Reflected } y\text{-int: } (4, 0)\)
 
 \item
-\(\text{Given Root: } (3, 0)\)
+\(\text{Given Root: } (0, 0)\)
 
 \item
-\(\text{Reflected Root: } (1, 0)\)
+\(\text{Reflected Root: } (4, 0)\)
 
 \end{itemize}
  \columnbreak  
 
- \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10,-10) rectangle (10,10); \draw[line width=1.5pt, blue!80!black, samples=100, domain=-10:10, <->] plot (\x, {-1.0*(\x - 2)^2 + 1}); \fill[blue] (2,1) circle (7pt); \fill[blue] (1,0) circle (7pt); \fill[blue] (3,0) circle (7pt); \fill[blue] (0,-3) circle (7pt); \fill[blue] (4,-3) circle (7pt); \end{tikzpicture} 
+ \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10,-10) rectangle (10,10); \draw[line width=1.5pt, blue!80!black, samples=100, domain=-10:10, <->] plot (\x, {-0.5*(\x - 2)^2 + 2}); \fill[blue] (2,2) circle (7pt); \fill[blue] (0,0) circle (7pt); \fill[blue] (4,0) circle (7pt); \fill[blue] (0,0) circle (7pt); \fill[blue] (4,0) circle (7pt); \end{tikzpicture} 
 
  \end{multicols} 
 
@@ -588,7 +580,7 @@ SOLUTION
 \renewcommand{\stxOuttro}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stxKnowl{
- Use the table to identify the transformations described by \(g(x) = -f(x - 1) + 1\). 
+ Use the table to identify the transformations described by \(g(x) = -f(-(x + 2)) - 3\). 
 
  Circle the option that applies and fill in the blanks as appropriate. Then apply these transformations to the graph of the function shown below. 
 
@@ -603,15 +595,15 @@ SOLUTION
 
 \begin{itemize}
 \item
- \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 1 units RIGHT.}\) 
+ \(\textbf{Horizontal: } \text{Reflection: YES, Dilation: 1, Shift: 2 units LEFT.}\) 
 
 \item
- \(\textbf{Vertical: } \text{Reflection: YES, Dilation: 1, Shift: 1 units UP.}\) 
+ \(\textbf{Vertical: } \text{Reflection: YES, Dilation: 1, Shift: 3 units DOWN.}\) 
 
 \end{itemize}
 
 
- \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (-1,0) -- (0,-1) -- (1,1) -- (2,-3) -- (4,-3);\fill[blue] (-1,0) circle (5pt); \fill[blue] (0,-1) circle (5pt); \fill[blue] (1,1) circle (5pt); \fill[blue] (2,-3) circle (5pt); \fill[blue] (4,-3) circle (5pt); \end{tikzpicture} 
+ \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (0,-4) -- (-1,-5) -- (-2,-3) -- (-3,-7) -- (-5,-7);\fill[blue] (0,-4) circle (5pt); \fill[blue] (-1,-5) circle (5pt); \fill[blue] (-2,-3) circle (5pt); \fill[blue] (-3,-7) circle (5pt); \fill[blue] (-5,-7) circle (5pt); \end{tikzpicture} 
 
 }
 }
