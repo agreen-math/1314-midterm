@@ -4,9 +4,6 @@ assets/bank.json
 dashboard.ipynb
 
 # --- Added for stability ---
-# Ignore the generated website
-docs/
-
 # Ignore compiled python files (prevents ghost code)
 __pycache__/
 *.pyc
