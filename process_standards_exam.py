@@ -18,8 +18,8 @@ def get_braced_content(text, start_index=0):
 
 def clean_solutions(content):
     """
-    Converts CheckIt \stxOuttro{SOLUTION...} blocks 
-    into exam class \begin{solution}...\end{solution} blocks.
+    Finds CheckIt's \stxOuttro{SOLUTION ...} blocks and converts them 
+    to exam class \begin{solution} ... \end{solution}.
     """
     content = re.sub(r'\\stxTitle\{.*?\}', '', content)
     while True:
@@ -28,15 +28,30 @@ def clean_solutions(content):
         start_pos = match.start()
         open_brace_pos = match.end() - 1
         inner_text, end_pos = get_braced_content(content, open_brace_pos)
+        
+        # Clean up the word "SOLUTION" and surrounding space
         inner_text = re.sub(r'^\s*SOLUTION\s*', '', inner_text, flags=re.IGNORECASE | re.MULTILINE).strip()
+        
+        # Wrap in exam solution environment
         new_block = r'\begin{solution}' + "\n" + inner_text + "\n" + r'\end{solution}'
         content = content[:start_pos] + new_block + content[end_pos:]
     return content.strip()
 
+def safe_replace_handler(match, template):
+    """Safely substitutes regex groups (\1, \2) into the template."""
+    result = template
+    if r'\1' in result:
+        val = match.group(1) if match.lastindex and match.lastindex >= 1 else ""
+        result = result.replace(r'\1', val)
+    if r'\2' in result:
+        val = match.group(2) if match.lastindex and match.lastindex >= 2 else ""
+        result = result.replace(r'\2', val)
+    return result
+
 # --- Custom Processors ---
 
 def process_equations(content):
-    """Q5-7: Clean up redundant text inside the question body."""
+    """Q5-7: Removes redundant instruction text from the question body."""
     content = content.replace("Solve for all solutions. Identify any extraneous solutions.", "")
     content = content.replace("Solve the rational equation for all solutions. Identify any extraneous solutions.", "")
     content = content.replace("Solve:", "")
@@ -44,6 +59,11 @@ def process_equations(content):
 
 def process_graphing_chars(content):
     """Q2: Forces side-by-side layout for characteristics list and graph."""
+    # 1. Extract Solution
+    sol_match = re.search(r"\\begin\{solution\}.*?\\end\{solution\}", content, re.DOTALL)
+    solution = sol_match.group(0) if sol_match else ""
+
+    # 2. Extract Components
     content = content.replace("A quadratic function has the characteristics given below.", "")
     
     list_match = re.search(r"(\\begin\{itemize\}.*?\\end\{itemize\})", content, re.DOTALL)
@@ -52,6 +72,7 @@ def process_graphing_chars(content):
     list_code = list_match.group(1) if list_match else ""
     graph_code = graph_match.group(1) if graph_match else ""
     
+    # 3. Rebuild
     if list_code and graph_code:
         return f"""
 \\begin{{multicols}}{{2}}
@@ -60,11 +81,18 @@ def process_graphing_chars(content):
 \\centering
 {graph_code}
 \\end{{multicols}}
+
+{solution}
 """
     return content
 
 def process_properties(content):
-    """Q3: Replaces list with Department Table and fixes instructions."""
+    """Q3: Replaces standard list with the Department Table."""
+    # 1. Extract Solution
+    sol_match = re.search(r"\\begin\{solution\}.*?\\end\{solution\}", content, re.DOTALL)
+    solution = sol_match.group(0) if sol_match else ""
+
+    # 2. Extract Function
     func_match = re.search(r"(\\(?:\[|\().*?f\(x\).*?(?:\]|\)))", content)
     func_eqn = func_match.group(1) if func_match else ""
     
@@ -82,7 +110,7 @@ range & \\ \hline
 \end{tabular}
 \end{center}
 """
-    return f"Find the vertex, axis of symmetry, $x$- and $y$- intercepts, domain, and range for the function \n\n {func_eqn} \n\n {table}"
+    return f"Find the vertex, axis of symmetry, $x$- and $y$- intercepts, domain, and range for the function \n\n {func_eqn}\) \n\n {table} \n\n {solution}"
 
 # ==========================================
 # 2. EXAM CONFIGURATION
@@ -95,7 +123,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\headerbox{\occ}" + "\n", 
         "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions." + "\n",
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{3}}\\" + "\n" + r"number of solutions: \fillin \, type of solutions: \fillin[][2.5in]"
+        "footer": r" \vspace{\stretch{3}}\vspace{12pt}" + "\n" + r"number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[][2.5in]"
     },
     
     # Q2: Graphing Characteristics
@@ -122,8 +150,8 @@ EXAM_MAP = [
         "points": [2, 2, 1],
         "header_prefix": r"\newpage" + "\n" + r"\question ",
         "part_spacing": [
-            r" \vspace{\stretch{1}} \\ \answerline", 
-            r" \vspace{\stretch{1}} \\ \answerline", 
+            r" \vspace{\stretch{1}} \vspace{12pt} \answerline", 
+            r" \vspace{\stretch{1}} \vspace{12pt} \answerline", 
             r" \fillwithlines{1in}"
         ],
         "footer": r" \newpage"
@@ -135,7 +163,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\headerbox{\ocg}" + "\n" + r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n",
         "header": r"\question[10] \label{eq_start} ",
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{1}}\\\answerline",
+        "footer": r" \vspace{\stretch{1}}\vspace{12pt}\answerline",
         "custom_processor": process_equations
     },
 
@@ -145,7 +173,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\newpage" + "\n" + r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n",
         "header": r"\question[10] ",
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{1}}\\\answerline",
+        "footer": r" \vspace{\stretch{1}}\vspace{12pt}\answerline",
         "custom_processor": process_equations
     },
 
@@ -155,7 +183,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\newpage" + "\n" + r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n",
         "header": r"\question[10] \label{eq_end} ",
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{1}}\\\answerline \newpage",
+        "footer": r" \vspace{\stretch{1}}\vspace{12pt}\answerline \newpage",
         "custom_processor": process_equations
     },
 
@@ -165,9 +193,8 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\headerbox{\ocb}" + "\n",
         "header": r"\question[5] ",
-        # Use lambda to safely handle replacement
         "replacements": [(r"Evaluate the difference quotient.*?,", r"Evaluate the difference quotient,")],
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{1}} \\ \answerline \newpage"
+        "footer": r" \vspace{\stretch{1}} \vspace{12pt} \answerline \newpage"
     },
 
     # Q9: Composition
@@ -176,27 +203,27 @@ EXAM_MAP = [
         "type": "parts",
         "points": [6, 4],
         "header_prefix": r"\question ", 
-        "header_suffix": r"\begin{solution}\end{solution}" + "\n",
-        "part_spacing": r" \vspace{\stretch{1}} \\ \answerline",
+        "header_suffix": "",
+        "part_spacing": r" \vspace{\stretch{1}} \vspace{12pt} \answerline",
         "footer": r" \newpage"
     },
 
-    # Q10: Inverse (RAW CHECKIT OUTPUT)
+    # Q10: Inverse
     {
         "checkit_idx": 5,
         "type": "single",
         "header": r"\question[10] ",
-        "footer": r"\begin{solution}\end{solution} \vspace{\stretch{2}}\\\answerline \newpage"
+        "footer": r" \vspace{\stretch{2}}\vspace{12pt}\answerline \newpage"
     },
 
-    # Q11: Transformations (RAW CHECKIT OUTPUT)
+    # Q11: Transformations (STRICT PASS-THROUGH)
+    # We rely on the parser to clean the solution block, but otherwise
+    # we leave the CheckIt minipage/makebox layout untouched.
     {
         "checkit_idx": 11,
         "type": "single",
         "pre_block": r"\headerbox{\oci}" + "\n",
-        # Added points to the question
         "header": r"\question[10] ",
-        # No custom processing - keeps minipages, makebox, and blank grid from CheckIt
         "footer": r" \newpage"
     },
 
@@ -207,8 +234,8 @@ EXAM_MAP = [
         "points": [3, 3, 4],
         "pre_block": r"\headerbox{\oca}" + "\n",
         "header_prefix": r"\question ", 
-        "header_suffix": r"\begin{solution}\end{solution}" + "\n",
-        "part_spacing": r" \vspace{\stretch{1}} \\ \answerline"
+        "header_suffix": "",
+        "part_spacing": r" \vspace{\stretch{1}} \vspace{12pt} \answerline"
     }
 ]
 
@@ -340,8 +367,7 @@ def process_standards_exam(input_file, output_file):
                 content = config['custom_processor'](content)
             elif 'replacements' in config:
                 for (pattern, replacement) in config['replacements']:
-                    # Simple regex replace without complex lambda if no backreferences
-                    content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+                    content = re.sub(pattern, lambda m: safe_replace_handler(m, replacement), content, flags=re.DOTALL)
             
             q_latex += content
             q_latex += config.get('footer', "")
