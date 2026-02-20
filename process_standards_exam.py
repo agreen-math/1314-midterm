@@ -52,8 +52,8 @@ def safe_replace_handler(match, template):
 
 def process_equations(content):
     """Q5-7: Removes redundant instruction text from the question body."""
-    content = content.replace("Solve for all solutions. Identify any extraneous solutions.", "")
-    content = content.replace("Solve the rational equation for all solutions. Identify any extraneous solutions.", "")
+    content = re.sub(r"Solve for all solutions\. Identify any extraneous solutions\.", "", content, flags=re.IGNORECASE)
+    content = re.sub(r"Solve the rational equation for all solutions\. Identify any extraneous solutions\.", "", content, flags=re.IGNORECASE)
     content = content.replace("Solve:", "")
     return content.strip()
 
@@ -64,7 +64,7 @@ def process_graphing_chars(content):
     solution = sol_match.group(0) if sol_match else ""
 
     # 2. Extract Components
-    content = content.replace("A quadratic function has the characteristics given below.", "")
+    content = re.sub(r"A quadratic function has the characteristics given below\.", "", content, flags=re.IGNORECASE)
     
     list_match = re.search(r"(\\begin\{itemize\}.*?\\end\{itemize\})", content, re.DOTALL)
     graph_match = re.search(r"(\\begin\{tikzpicture\}.*?\\end\{tikzpicture\})", content, re.DOTALL)
@@ -91,10 +91,19 @@ def process_properties(content):
     # 1. Extract Solution
     sol_match = re.search(r"\\begin\{solution\}.*?\\end\{solution\}", content, re.DOTALL)
     solution = sol_match.group(0) if sol_match else ""
+    
+    content_no_sol = content.replace(solution, "") if solution else content
 
     # 2. Extract Function
-    func_match = re.search(r"(\\(?:\[|\().*?f\(x\).*?(?:\]|\)))", content)
-    func_eqn = func_match.group(1) if func_match else ""
+    # Looks explicitly for \( ... \) or \[ ... \] so it ignores internal parenthesis like (x-2)^2
+    func_match = re.search(r"(\\\(.*?=.*?\\\)|\\\[.*?=.*?\\\])", content_no_sol, re.DOTALL)
+    
+    if func_match:
+        func_eqn = func_match.group(1)
+    else:
+        # Fallback to any math block if no equals sign is found
+        func_match = re.search(r"(\\\(.*?\\\)|\\\[.*?\\\])", content_no_sol, re.DOTALL)
+        func_eqn = func_match.group(1) if func_match else r"\( \text{[Function Missing]} \)"
     
     table = r"""
 \renewcommand{\arraystretch}{3}
@@ -123,6 +132,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\headerbox{\occ - \version}" + "\n", 
         "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions." + "\n",
+        "replacements": [(r"Determine the number and type of solutions for the following equation:\s*", "")],
         "footer": r" \vspace{\stretch{3}}\\" + "\n" + r"number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[][2.5in]"
     },
     
@@ -193,7 +203,7 @@ EXAM_MAP = [
         "type": "single",
         "pre_block": r"\headerbox{\ocb - \version}" + "\n",
         "header": r"\question[5] ",
-        "replacements": [(r"Evaluate the difference quotient.*?,", r"Evaluate the difference quotient,")],
+        "replacements": [(r"Evaluate the difference quotient for the given function,", r"Evaluate the difference quotient,")],
         "footer": r" \vspace{\stretch{1}} \\ \answerline \newpage"
     },
 
@@ -217,8 +227,6 @@ EXAM_MAP = [
     },
 
     # Q11: Transformations (STRICT PASS-THROUGH)
-    # We rely on the parser to clean the solution block, but otherwise
-    # we leave the CheckIt minipage/makebox layout untouched.
     {
         "checkit_idx": 11,
         "type": "single",

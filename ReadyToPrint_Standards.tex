@@ -37,16 +37,16 @@
 \question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions.
 Determine the number and type of solutions for the following equation: 
 
- \(-x^{2} - 4 \, x - 1 = -2 \, x\) 
+ \(-5 \, x^{2} + 4 \, x - 9 = -2 \, x\) 
 
 \begin{solution}
-\(-1x^2 + (-2)x + -1 = 0\) 
+\(-5x^2 + (6)x + -9 = 0\) 
 
- \(\Delta = (-2)^2 - 4(-1)(-1)\) 
+ \(\Delta = (6)^2 - 4(-5)(-9)\) 
 
- \(\Delta = 0\) 
+ \(\Delta = -144\) 
 
- \(\boxed{\text{ one solutions, repeated real root }}\)
+ \(\boxed{\text{ two solutions, complex conjugate roots }}\)
 \end{solution} \vspace{\stretch{3}}\\
 number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[][2.5in]
 
@@ -56,13 +56,13 @@ number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[
 \begin{multicols}{2}
 \begin{itemize}
 \item
-\(\text{Vertex: } (-4, 9)\)
+\(\text{Vertex: } (-2, -1)\)
 
 \item
-\(x\text{-intercept: } -7\)
+\(x\text{-intercept: } -3\)
 
 \item
-\(y\text{-intercept: } -7\)
+\(y\text{-intercept: } 3\)
 
 \end{itemize}
 \columnbreak
@@ -71,28 +71,28 @@ number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[
 \end{multicols}
 
 \begin{solution}
-\begin{multicols}{2}  
+\begin{multicols}{2} **Points to plot:** 
 
 \begin{itemize}
 \item
-\(\text{Vertex: } (-4, 9)\)
+\(\text{Vertex: } (-2, -1)\)
 
 \item
-\(y\text{-intercept: } (0, -7)\)
+\(y\text{-intercept: } (0, 3)\)
 
 \item
-\(\text{Reflected } y\text{-int: } (-8, -7)\)
+\(\text{Reflected } y\text{-int: } (-4, 3)\)
 
 \item
-\(\text{Given Root: } (-7, 0)\)
+\(\text{Given Root: } (-3, 0)\)
 
 \item
 \(\text{Reflected Root: } (-1, 0)\)
 
 \end{itemize}
- \columnbreak  
+ \columnbreak **Graph:** 
 
- \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10,-10) rectangle (10,10); \draw[line width=1.5pt, blue!80!black, samples=100, domain=-10:10, <->] plot (\x, {-1.0*(\x - -4)^2 + 9}); \fill[blue] (-4,9) circle (7pt); \fill[blue] (-7,0) circle (7pt); \fill[blue] (-1,0) circle (7pt); \fill[blue] (0,-7) circle (7pt); \fill[blue] (-8,-7) circle (7pt); \end{tikzpicture} 
+ \begin{tikzpicture}[scale=0.35] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10,-10) rectangle (10,10); \draw[line width=1.5pt, blue!80!black, samples=100, domain=-10:10, <->] plot (\x, {1.0*(\x - -2)^2 + -1}); \fill[blue] (-2,-1) circle (7pt); \fill[blue] (-3,0) circle (7pt); \fill[blue] (-1,0) circle (7pt); \fill[blue] (0,3) circle (7pt); \fill[blue] (-4,3) circle (7pt); \end{tikzpicture} 
 
  \end{multicols}
 \end{solution}
@@ -101,7 +101,7 @@ number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[
 \newpage
 \question[5] Find the vertex, axis of symmetry, $x$- and $y$- intercepts, domain, and range for the function 
 
- \(f(x) = -\frac{1}{4}(x - 2) 
+ \(f(x) = -\frac{1}{2}(x + 6)^2 +8\) 
 
  
 \renewcommand{\arraystretch}{3}
@@ -121,60 +121,60 @@ range & \\ \hline
  \begin{solution}
 \(\textbf{Direction: } \text{Opens Down}\) 
 
- \(\textbf{Vertex: } (2, 1)\) 
+ \(\textbf{Vertex: } (-6, 8)\) 
 
- \(\textbf{Axis of Symmetry: } x = 2\) 
+ \(\textbf{Axis of Symmetry: } x = -6\) 
 
  \(\textbf{x-intercepts:}\) 
 
- \(-\frac{1}{4}(x - 2)^2 +1 = 0\) 
+ \(-\frac{1}{2}(x + 6)^2 +8 = 0\) 
 
- \((x - 2)^2 = 4\) 
+ \((x + 6)^2 = 16\) 
 
- \(x = 2 \pm 2\) 
+ \(x = -6 \pm 4\) 
 
- \(\boxed{ 0, 4 }\) 
+ \(\boxed{ -10, -2 }\) 
 
  \(\textbf{y-intercept:}\) 
 
- \(= -\frac{1}{4}(0 - 2)^2 +1\) 
+ \(= -\frac{1}{2}(0 + 6)^2 +8\) 
 
- \(= -\frac{1}{4}(4) +1\) 
+ \(= -\frac{1}{2}(36) +8\) 
 
- \(= -1 +1\) 
+ \(= -18 +8\) 
 
- \(\boxed{ 0 }\) 
+ \(\boxed{ -10 }\) 
 
  \(\textbf{Domain: } (-\infty, \infty)\) 
 
- \(\textbf{Range: } (-\infty, 1]\)
+ \(\textbf{Range: } (-\infty, 8]\)
 \end{solution}
 
 \newpage
-\question Suppose a rocket carrying fireworks is launched from a hill 45 feet above a lake. The rocket's height \(h\) (in feet) above the lake at time \(t\) (in seconds) is given by
+\question Suppose a rocket carrying fireworks is launched from a hill 88 feet above a lake. The rocket's height \(h\) (in feet) above the lake at time \(t\) (in seconds) is given by
 
- \(h(t) = -16t^2 + 96t + 45\)
+ \(h(t) = -16t^2 + 160t + 88\)
 \begin{parts}
   \part[2] When will the rocket reach its maximum height?
 
 \begin{solution}
-\(t = \frac{-96}{2(-16)} = \frac{-96}{-32}\) 
+\(t = \frac{-160}{2(-16)} = \frac{-160}{-32}\) 
 
- \(\boxed{t = 3 \text{ sec}}\)
+ \(\boxed{t = 5 \text{ sec}}\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
   \part[2] What is the maximum height the rocket will reach?
 
 \begin{solution}
-\(h(3) = -16(3)^2 + 96(3) + 45\) 
+\(h(5) = -16(5)^2 + 160(5) + 88\) 
 
- \(= -144 + 288 + 45\) 
+ \(= -400 + 800 + 88\) 
 
- \(\boxed{h = 189 \text{ ft}}\)
+ \(\boxed{h = 488 \text{ ft}}\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
   \part[1] Interpret your results for the previous two questions in one or more complete sentences, including appropriate units.
 
 \begin{solution}
-The rocket will reach a maximum height of 189 ft 3 seconds after launch.
+The rocket will reach a maximum height of 488 ft 5 seconds after launch.
 \end{solution}  \fillwithlines{1in}
 \end{parts} \newpage
 
@@ -200,115 +200,115 @@ The rocket will reach a maximum height of 189 ft 3 seconds after launch.
 
 \newpage
 \uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}
-\question[10] \(\sqrt{x + 73} + 1 = 9\) 
+\question[10] \(\sqrt{x + 0} + 4 = 7\) 
 
 \begin{solution}
-\(\sqrt{x + 73} = 8\) 
+\(\sqrt{x + 0} = 3\) 
 
- \(x + 73 = 64\) 
+ \(x + 0 = 9\) 
 
- \(x = 64 - 73\) 
+ \(x = 9 - 0\) 
 
- \(\boxed{x = -9}\) 
+ \(\boxed{x = 9}\) 
 
  (No extraneous solutions)
 \end{solution} \vspace{\stretch{1}}\\\answerline
 
 \newpage
 \uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}
-\question[10] \label{eq_end} \(\displaystyle \frac{x}{x + 1} + \frac{3}{(x + 1)(x + 4)} = \frac{-3}{x + 4}\) 
+\question[10] \label{eq_end} \(\displaystyle \frac{x}{x + 4} - \frac{20}{(x + 4)(x - 1)} = \frac{-11}{x - 1}\) 
 
 \begin{solution}
-\(x(x + 4) + 3 = -3(x + 1)\) 
+\(x(x - 1) - 20 = -11(x + 4)\) 
 
- \(x^{2} + 7 \, x + 6 = 0\) 
+ \(x^{2} + 10 \, x + 24 = 0\) 
 
- \((x + 1)(x + 6) = 0\) 
+ \((x + 4)(x + 6) = 0\) 
 
- \(x = -6, \quad x = -1\) 
+ \(x = -6, \quad x = -4\) 
 
- \(x = -1 \implies \text{Extraneous}\) 
+ \(x = -4 \implies \text{Extraneous}\) 
 
  \(\boxed{x = -6}\)
 \end{solution} \vspace{\stretch{1}}\\\answerline \newpage
 
 \headerbox{\ocb - \version}
-\question[5] Evaluate the difference quotient, \(\displaystyle{ \frac{f(x+h)-f(x)}{h}}\) , for \(f(x) = 6 \, x^{2} + 1\). 
+\question[5] Evaluate the difference quotient, \(\displaystyle{ \frac{f(x+h)-f(x)}{h}}\) , for \(f(x) = 3 \, x^{2} + 3\). 
 
 \begin{solution}
-\(f(x+h) = 6(x+h)^2 + 1\) 
+\(f(x+h) = 3(x+h)^2 + 3\) 
 
- \(= 6(x^2 + 2xh + h^2) + 1\) 
+ \(= 3(x^2 + 2xh + h^2) + 3\) 
 
- \(= 6 \, h^{2} + 12 \, h x + 6 \, x^{2} + 1\) 
+ \(= 3 \, h^{2} + 6 \, h x + 3 \, x^{2} + 3\) 
 
- \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (6 \, h^{2} + 12 \, h x + 6 \, x^{2} + 1) - (6 \, x^{2} + 1) }{h}}\) 
+ \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (3 \, h^{2} + 6 \, h x + 3 \, x^{2} + 3) - (3 \, x^{2} + 3) }{h}}\) 
 
- \(=\displaystyle{ \frac{ 6 \, h^{2} + 12 \, h x }{h}}\) 
+ \(=\displaystyle{ \frac{ 3 \, h^{2} + 6 \, h x }{h}}\) 
 
- \(= \displaystyle{ \frac{ h(6 \, h + 12 \, x) }{h}}\) 
+ \(= \displaystyle{ \frac{ h(3 \, h + 6 \, x) }{h}}\) 
 
- \(\boxed{ 6 \, h + 12 \, x }\)
+ \(\boxed{ 3 \, h + 6 \, x }\)
 \end{solution} \vspace{\stretch{1}} \\ \answerline \newpage
 
-\question Given \(f(x) = -2 \, x\) and \(g(x) = 2 \, x^{2} - 1\), find the following:
+\question Given \(f(x) = 4 \, x\) and \(g(x) = 2 \, x^{2} + 1\), find the following:
 \begin{parts}
   \part[6] \((f \circ g)(x)\)
 
 \begin{solution}
-\(f(g(x)) = -2(2 \, x^{2} - 1)\) 
+\(f(g(x)) = 4(2 \, x^{2} + 1)\) 
 
- \(\boxed{ -4 \, x^{2} + 2 }\) 
+ \(\boxed{ 8 \, x^{2} + 4 }\) 
 
 ERROR 1: \(g(f(x))\)
 
- \(= 2(-2 \, x)^2 - 1\) 
+ \(= 2(4 \, x)^2 + 1\) 
 
- \(= 2(4 \, x^{2}) - 1\) 
+ \(= 2(16 \, x^{2}) + 1\) 
 
- \(\boxed{ 8 \, x^{2} - 1 }\) 
+ \(\boxed{ 32 \, x^{2} + 1 }\) 
 
 ERROR 2: \(f(x) \cdot g(x)\)
 
- \(= (-2 \, x)(2 \, x^{2} - 1)\) 
+ \(= (4 \, x)(2 \, x^{2} + 1)\) 
 
- \(\boxed{ -4 \, x^{3} + 2 \, x }\)
+ \(\boxed{ 8 \, x^{3} + 4 \, x }\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
   \part[4] \((f \circ f)(x)\)
 
 \begin{solution}
-\(f(f(x)) = -2(-2 \, x)\) 
+\(f(f(x)) = 4(4 \, x)\) 
 
- \(\boxed{ 4 \, x }\)
+ \(\boxed{ 16 \, x }\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
 \end{parts} \newpage
 
 \question[10] Given that the function is one-to-one, find the inverse function \(f^{-1}(x)\). 
 
- \(f(x) = \sqrt[3]{x - 2} - 3\) 
+ \(f(x) = \sqrt[3]{x} - 1\) 
 
 \begin{solution}
-\(y = f(x) = \sqrt[3]{x - 2} - 3\) 
+\(y = f(x) = \sqrt[3]{x} - 1\) 
 
- \(x = \sqrt[3]{y - 2} - 3\) 
+ \(x = \sqrt[3]{y} - 1\) 
 
- \(x + 3 = \sqrt[3]{y - 2}\) 
+ \(x + 1 = \sqrt[3]{y}\) 
 
- \((x + 3)^3 = y - 2\) 
+ \((x + 1)^3 = y\) 
 
- \(y = (x + 3)^3 + 2\) 
+ \(y = (x + 1)^3\) 
 
- \(\boxed{ f^{-1}(x) = (x + 3)^3 + 2 }\) 
+ \(\boxed{ f^{-1}(x) = (x + 1)^3 }\) 
 
   
 
- \(= (x + 3)(x^2 + 6x + 9) + 2\) 
+ \(= (x + 1)(x^2 + 2x + 1)\) 
 
- \(\boxed{ f^{-1}(x) = x^{3} + 9 \, x^{2} + 27 \, x + 29 }\)
+ \(\boxed{ f^{-1}(x) = x^{3} + 3 \, x^{2} + 3 \, x + 1 }\)
 \end{solution} \vspace{\stretch{2}}\\\answerline \newpage
 
 \headerbox{\oci - \version}
-\question[10] Use the table to identify the transformations described by \(g(x) = -2f(x) + 1\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations of the given function. If one does not apply, you may leave it blank. Then apply these transformations to the graph of the function shown below. 
+\question[10] Use the table to identify the transformations described by \(g(x) = -2f(x + 4)\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations of the given function. If one does not apply, you may leave it blank. Then apply these transformations to the graph of the function shown below. 
 
  \(\renewcommand{\arraystretch}{3} \begin{array}{|l|l|} \hline \textbf{Horizontal Transformations} & \textbf{Vertical Transformations} \\ \hline \text{Reflection: YES or NO} & \text{Reflection: YES or NO} \\ \hline \text{Dilation: \underline{\hspace{2cm}} times as wide} & \text{Dilation: \underline{\hspace{2cm}} times as tall} \\ \hline \text{Translation: \underline{\hspace{2cm}} units LEFT or RIGHT} & \text{Translation: \underline{\hspace{2cm}} units UP or DOWN} \\ \hline \end{array}\) 
 
@@ -317,40 +317,40 @@ ERROR 2: \(f(x) \cdot g(x)\)
 \begin{solution}
 \begin{itemize}
 \item
- \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 0 units NONE.}\) 
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 4 units LEFT.}\) 
 
 \item
- \(\textbf{Vertical: } \text{Reflection: YES, Dilation: 2, Shift: 1 units UP.}\) 
+ \(\textbf{Vertical: } \text{Reflection: YES, Dilation: 2, Shift: 0 units NONE.}\) 
 
 \end{itemize}
 
 
- \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (-2,-1) -- (-1,-3) -- (0,1) -- (1,-7) -- (3,-7);\fill[blue] (-2,-1) circle (5pt); \fill[blue] (-1,-3) circle (5pt); \fill[blue] (0,1) circle (5pt); \fill[blue] (1,-7) circle (5pt); \fill[blue] (3,-7) circle (5pt); \end{tikzpicture}
+ \begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (-6,-2) -- (-5,-4) -- (-4,0) -- (-3,-8) -- (-1,-8);\fill[blue] (-6,-2) circle (5pt); \fill[blue] (-5,-4) circle (5pt); \fill[blue] (-4,0) circle (5pt); \fill[blue] (-3,-8) circle (5pt); \fill[blue] (-1,-8) circle (5pt); \end{tikzpicture}
 \end{solution} \newpage
 
 \headerbox{\oca - \version}
-\question Evaluate the function \(f(x) = 4 \, x^{2} + 4 \, x + 6\).
+\question Evaluate the function \(f(x) = -4 \, x^{2} + 6 \, x - 4\).
 \begin{parts}
   \part[3] Find \(f(7)\).
 
 \begin{solution}
-\(4(7)^2 + 4(7) + 6\)
+\(-4(7)^2 + 6(7) + -4\)
 
-\(\boxed{f(7) = 230}\)
+\(\boxed{f(7) = -158}\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
   \part[3] Find \(f(-x)\).
 
 \begin{solution}
-\(4(-x)^2 + 4(-x) + 6\)
+\(-4(-x)^2 + 6(-x) + -4\)
 
-\(\boxed{f(-x) = 4 \, x^{2} - 4 \, x + 6}\)
+\(\boxed{f(-x) = -4 \, x^{2} - 6 \, x - 4}\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
   \part[4] Find \(f(x + a)\).
 
 \begin{solution}
-\(4(x+a)^2 + 4(x+a) + 6\)
+\(-4(x+a)^2 + 6(x+a) + -4\)
 
-\(\boxed{f(x + a) = 4 \, a^{2} + 8 \, a x + 4 \, x^{2} + 4 \, a + 4 \, x + 6}\)
+\(\boxed{f(x + a) = -4 \, a^{2} - 8 \, a x - 4 \, x^{2} + 6 \, a + 6 \, x - 4}\)
 \end{solution}  \vspace{\stretch{1}} \\ \answerline
 \end{parts}
 

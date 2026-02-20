@@ -18,6 +18,11 @@ class Generator(BaseGenerator):
         # x + B = k^2  ->  B = k^2 - sol
         B = k**2 - sol
         
+        # Constraint: B cannot be zero
+        while B == 0:
+            sol = randint(-10, 10)
+            B = k**2 - sol
+        
         # Pick outside constant C
         C = randint(-9, 9)
         while C == 0:
@@ -28,7 +33,7 @@ class Generator(BaseGenerator):
         
         # 2. Build Equation String
         # Handle sign of B cleanly
-        if B >= 0:
+        if B > 0:
             radicand = f"x + {B}"
         else:
             radicand = f"x - {abs(B)}"
@@ -50,7 +55,11 @@ class Generator(BaseGenerator):
         step2 = f"{radicand} = {k**2}"
         
         # Step 3: Solve (Simple subtraction)
-        step3 = f"x = {k**2} - {B}"
+        # Formatted so we don't end up with something like "x = 25 - -4"
+        if B > 0:
+            step3 = f"x = {k**2} - {B}"
+        else:
+            step3 = f"x = {k**2} + {abs(B)}"
         
         return {
             "equation": equation,

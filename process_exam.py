@@ -11,7 +11,6 @@ EXAM_MAP = [
         "type": "parts",
         "points": [3, 3, 4],
         "header_prefix": r"\question ", 
-        # Removed Chapter Solution suffix
         "part_spacing": r" \vspace{\stretch{1}} \\ \answerline"
     },
     
@@ -19,8 +18,8 @@ EXAM_MAP = [
     {
         "id": "Q2",
         "type": "single",
-        "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions." + "\n",
-        # Removed Chapter Solution block from start of footer
+        "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions.\\" + "\n",
+        "replacements": [(r"(?i)Determine the number and type of solutions for the following equation:\s*", "")],
         "footer": r" \vspace{\stretch{3}}\\" + "\n" + r"number of solutions: \fillin \hspace{\stretch{1}} type of solutions: \fillin[][2.5in] \newpage"
     },
     
@@ -28,8 +27,12 @@ EXAM_MAP = [
     {
         "id": "Q3",
         "type": "single",
-        "header": r"\uplevel{For the following questions, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n" + r"\question[10] Solve: ",
-        # Removed Chapter Solution
+        "header": r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n" + r"\question[10] \label{eq_start} ",
+        "replacements": [
+            (r"(?i)Solve for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve the rational equation for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve:\s*", "")
+        ],
         "footer": r" \vspace{\stretch{1}}\\\,\answerline"
     },
     
@@ -37,8 +40,12 @@ EXAM_MAP = [
     {
         "id": "Q4",
         "type": "single",
-        "header": r"\question[10] Solve: ",
-        # Removed Chapter Solution
+        "header": r"\question[10] ",
+        "replacements": [
+            (r"(?i)Solve for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve the rational equation for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve:\s*", "")
+        ],
         "footer": r" \vspace{\stretch{1}}\\\,\answerline"
     },
     
@@ -46,8 +53,12 @@ EXAM_MAP = [
     {
         "id": "Q5",
         "type": "single",
-        "header": r"\question[10] Solve: ",
-        # Removed Chapter Solution
+        "header": r"\question[10] \label{eq_end} ",
+        "replacements": [
+            (r"(?i)Solve for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve the rational equation for all solutions\.\s*Identify any extraneous solutions\.", ""),
+            (r"(?i)Solve:\s*", "")
+        ],
         "footer": r" \vspace{\stretch{1}}\\\,\answerline \newpage"
     },
     
@@ -56,7 +67,6 @@ EXAM_MAP = [
         "id": "Q6",
         "type": "single",
         "header": r"\question[10] ",
-        # Removed Chapter Solution
         "footer": r" \vspace{\stretch{2}}\\\,\answerline \newpage"
     },
     
@@ -80,7 +90,6 @@ EXAM_MAP = [
         "type": "parts",
         "points": [6, 4],
         "header_prefix": r"\question ", 
-        # Removed Chapter Solution suffix
         "part_spacing": r" \vspace{\stretch{1}} \\ \answerline",
         "footer": r" \newpage"
     },
@@ -90,7 +99,7 @@ EXAM_MAP = [
         "id": "Q9",
         "type": "single",
         "header": r"\question[5] ",
-        # Removed Chapter Solution
+        "replacements": [(r"(?i)Evaluate the difference quotient for the given function,\s*", "Evaluate the difference quotient, ")],
         "footer": r" \vspace{\stretch{1}} \\ \answerline \newpage"
     },
     
