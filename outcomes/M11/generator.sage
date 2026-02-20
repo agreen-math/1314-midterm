@@ -11,7 +11,7 @@ class Generator(BaseGenerator):
             sign = choice([1, -1])
             a = sign * Rational(1) / denom
             
-            # 2. Pick distance 'd'
+            # 2. Pick distance 'd' (distance from axis of symmetry to x-intercepts)
             if denom == 1:
                 d = randint(1, 5)
             else:
@@ -21,26 +21,49 @@ class Generator(BaseGenerator):
             k_val = -a * (d**2)
             k = Integer(k_val)
             
-            if abs(k) > 10: continue
+            # Constraint: Vertex cannot be on the x-axis, must fit on graph
+            if k == 0 or abs(k) > 10: 
+                continue
             
             # 4. Pick h (Axis)
-            h = randint(-6, 6)
+            # Constraint: Vertex cannot be on the y-axis (h != 0).
+            # Constraint: Reflected y-intercept x-coord is 2h. So abs(2h) <= 10  =>  abs(h) <= 5.
+            if denom == 2:
+                # To keep y-intercept an integer when a = +/- 1/2, h must be even.
+                h_opts = [-4, -2, 2, 4]
+            else:
+                h_opts = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+                
+            h = choice(h_opts)
+            
+            # Constraint: Prevent the reflected y-int from overlapping with the given x-int.
+            if d == abs(h):
+                continue
             
             # 5. Check y-intercept
             y_int_val = a*(h**2) + k
-            if not y_int_val in ZZ: continue
+            if not y_int_val in ZZ: 
+                continue
             y_int = Integer(y_int_val)
-            if abs(y_int) > 10: continue
             
-            # 6. Check roots
+            # Constraint: y-intercept cannot be the origin, must fit on graph
+            if y_int == 0 or abs(y_int) > 10: 
+                continue
+            
+            # 6. Check roots (x-intercepts)
             x1 = h - d
             x2 = h + d
-            if abs(x1) > 10 or abs(x2) > 10: continue
             
-            # 7. Check Reflected Point
+            # Constraint: x-intercepts must fit on graph
+            if abs(x1) > 10 or abs(x2) > 10: 
+                continue
+            
+            # 7. Check Reflected Point (redundant because of abs(h) <= 5, but good for safety)
             x_ref = 2*h
-            if abs(x_ref) > 10: continue
+            if abs(x_ref) > 10: 
+                continue
             
+            # If all constraints pass, we have a perfect problem
             break
 
         # --- Format Data for Question ---

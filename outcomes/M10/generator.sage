@@ -17,10 +17,16 @@ class Generator(BaseGenerator):
         else:
             step = denom
             
-        h = randint(-3, 3) * step
+        # Ensure h is non-zero
+        h = 0
+        while h == 0:
+            h = randint(-3, 3) * step
+            
+        # d determines the horizontal distance from the vertex to the x-intercepts.
+        # Since d >= 1 * step, d is never 0.
         d = randint(1, 3) * step 
         
-        # Calculate k
+        # Calculate k. Since 'a' and 'd' are non-zero, 'k' is guaranteed to be non-zero.
         k_val = -a * (d**2)
         k = Integer(k_val)
         
@@ -31,6 +37,7 @@ class Generator(BaseGenerator):
         a_tex = f"\\frac{{1}}{{{denom}}}" if sign == 1 else f"-\\frac{{1}}{{{denom}}}"
             
         # Format Vertex Form LaTeX
+        # (The h == 0 check will technically never trigger now, but left intact for safety)
         if h == 0:
             term_inner = "x"
             term_sq = "x^2"

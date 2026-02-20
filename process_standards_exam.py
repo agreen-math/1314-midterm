@@ -121,7 +121,7 @@ EXAM_MAP = [
     {
         "checkit_idx": 1,
         "type": "single",
-        "pre_block": r"\headerbox{\occ}" + "\n", 
+        "pre_block": r"\headerbox{\occ - \version}" + "\n", 
         "header": r"\question[10] \textbf{\textit{Without solving}}, use the discriminant to determine the number and the type of the solutions." + "\n",
         "footer": r" \vspace{\stretch{3}}\\" + "\n" + r"number of solutions: \fillin[][.75in] \hspace{.25in} type of solutions: \fillin[][2.5in]"
     },
@@ -161,7 +161,7 @@ EXAM_MAP = [
     {
         "checkit_idx": 2,
         "type": "single",
-        "pre_block": r"\headerbox{\ocg}" + "\n" + r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n",
+        "pre_block": r"\headerbox{\ocg - \version}" + "\n" + r"\uplevel{In problems \ref{eq_start} through \ref{eq_end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}" + "\n",
         "header": r"\question[10] \label{eq_start} ",
         "footer": r" \vspace{\stretch{1}}\\\answerline",
         "custom_processor": process_equations
@@ -191,7 +191,7 @@ EXAM_MAP = [
     {
         "checkit_idx": 8,
         "type": "single",
-        "pre_block": r"\headerbox{\ocb}" + "\n",
+        "pre_block": r"\headerbox{\ocb - \version}" + "\n",
         "header": r"\question[5] ",
         "replacements": [(r"Evaluate the difference quotient.*?,", r"Evaluate the difference quotient,")],
         "footer": r" \vspace{\stretch{1}} \\ \answerline \newpage"
@@ -222,7 +222,7 @@ EXAM_MAP = [
     {
         "checkit_idx": 11,
         "type": "single",
-        "pre_block": r"\headerbox{\oci}" + "\n",
+        "pre_block": r"\headerbox{\oci - \version}" + "\n",
         "header": r"\question[10] ",
         "footer": r" \newpage"
     },
@@ -232,7 +232,7 @@ EXAM_MAP = [
         "checkit_idx": 0,
         "type": "parts",
         "points": [3, 3, 4],
-        "pre_block": r"\headerbox{\oca}" + "\n",
+        "pre_block": r"\headerbox{\oca - \version}" + "\n",
         "header_prefix": r"\question ", 
         "header_suffix": "",
         "part_spacing": r" \vspace{\stretch{1}} \\ \answerline"

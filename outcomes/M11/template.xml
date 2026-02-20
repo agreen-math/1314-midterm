@@ -23,10 +23,10 @@
         </p>
     </content>
     <outtro>
-        <p>SOLUTION</p>
+        <p>Solution</p>
         <p>
             \begin{multicols}{2}
-            <strong>Points to plot:</strong>
+            **Points to plot:**
         </p>
         
         <list>
@@ -39,7 +39,7 @@
         
         <p>
             \columnbreak
-            <strong>Graph:</strong>
+            **Graph:**
         </p>
         <p>
             {{sol_graph}}
