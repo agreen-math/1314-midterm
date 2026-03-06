@@ -11,9 +11,9 @@
         </p>
     </content>
     <outtro>
-        <p>SOLUTION</p>
+        <p>Solution</p>
         <p>
-            <m>y = {{equation}}</m>
+            <m>y = {{equation_rhs}}</m>
         </p>
         <p>
             <m>{{step_swap}}</m>
@@ -31,7 +31,7 @@
             <m>\boxed{ {{factored_ans}} }</m>
         </p>
         <p>
-            <strong>OR</strong>
+            **OR**
         </p>
         <p>
             <m>= {{exp_step1}}</m>

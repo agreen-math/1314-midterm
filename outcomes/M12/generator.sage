@@ -11,48 +11,27 @@ class Generator(BaseGenerator):
         while True:
             # --- Randomize Parameters with Constraints ---
             
-            # 1. Vertical Stretch (Magnitude 1 or 2)
-            a_mag = choice([1, 2])
+            # 1. Vertical Stretch/Reflection (a = -1, 2, or 3)
+            A = choice([-1, 2, 3])
             
-            # 2. Reflection (Exactly One: Horizontal OR Vertical)
-            reflection_type = choice(['vertical', 'horizontal'])
-            
-            if reflection_type == 'vertical':
-                a_sign = -1
-                B = 1 # No horizontal reflection
+            # 2. Horizontal & Vertical Shifts (h and k both non-zero)
+            H = randint(-8, 8)
+            while H == 0: 
+                H = randint(-8, 8)
                 
-                # If reflection is Vertical, Shift can be Horizontal OR Vertical
-                shift_type = choice(['horizontal', 'vertical'])
-                
-            else: # horizontal reflection
-                a_sign = 1
-                B = -1 # Horizontal reflection
-                
-                # CONSTRAINT: Do not combine horizontal reflection with horizontal shift.
-                # Must be Vertical shift.
-                shift_type = 'vertical'
+            K = randint(-8, 8)
+            while K == 0: 
+                K = randint(-8, 8)
             
-            A = a_mag * a_sign
-
-            # 3. Shift (Exactly One: H or K, not both, not neither)
-            if shift_type == 'horizontal':
-                K = 0
-                H = randint(-5, 5)
-                while H == 0: H = randint(-5, 5) # Force a shift
-            else: # vertical
-                H = 0
-                K = randint(-5, 5)
-                while K == 0: K = randint(-5, 5) # Force a shift
-            
-            # 4. Calculate New Points & Check Bounds
+            # 3. Calculate New Points & Check Bounds
             new_points = []
             valid = True
             
             for (px, py) in base_points:
-                # Transform x: x_new = x_old / B + H
-                nx = (px / B) + H
+                # Transform x: x_new = x_old + H
+                nx = px + H
                 
-                # Transform y: y_new = A * y_old + K
+                # Transform y: y_new = a * y_old + K
                 ny = A * py + K
                 
                 # Check 10x10 grid bounds
@@ -65,36 +44,20 @@ class Generator(BaseGenerator):
                 break
                 
         # --- Format Expression ---
-        # f(B(x-H)) implies internal logic, but we usually write f(x-H) or f(-x)
-        # B is either 1 or -1.
-        
-        # Inner term formatting
-        if H == 0:
-            if B == -1:
-                inner = "-x"
-            else:
-                inner = "x"
-        elif H > 0:
-            # Shift Right
-            inner = f"x - {H}"
+        # Inner term formatting f(x - H)
+        if H > 0:
+            inner = f"x - {H}" # Shift Right
         else:
-            # Shift Left
-            inner = f"x + {abs(H)}"
+            inner = f"x + {abs(H)}" # Shift Left
             
-        # Note: Since we banned H-Refl + H-Shift, we don't need to worry about f(-(x-H)) formatting.
-        # It's either f(x-H) or f(-x).
-            
-        # Outer term formatting
-        if A == 1:
-            a_str = ""
-        elif A == -1:
+        # Outer 'a' multiplier formatting
+        if A == -1:
             a_str = "-"
         else:
             a_str = f"{A}"
             
-        if K == 0:
-            k_str = ""
-        elif K > 0:
+        # Outer 'k' shift formatting
+        if K > 0:
             k_str = f" + {K}"
         else:
             k_str = f" - {abs(K)}"
@@ -102,26 +65,22 @@ class Generator(BaseGenerator):
         expr = f"{a_str}f({inner}){k_str}"
         
         # --- Answer Keys ---
-        h_ref_ans = "YES" if B == -1 else "NO"
-        h_dil_ans = "1" # We only did vertical stretch per instructions
+        # Horizontal properties (no reflection or dilation allowed in this version)
+        h_ref_ans = "NO"
+        h_dil_ans = "1" 
         
-        if H == 0:
-            h_trans_dist = "0"
-            h_trans_dir = "NONE"
-        elif H > 0:
+        if H > 0:
             h_trans_dist = f"{H}"
             h_trans_dir = "RIGHT"
         else:
             h_trans_dist = f"{abs(H)}"
             h_trans_dir = "LEFT"
             
+        # Vertical properties
         v_ref_ans = "YES" if A < 0 else "NO"
-        v_dil_ans = f"{a_mag}"
-        
-        if K == 0:
-            v_trans_dist = "0"
-            v_trans_dir = "NONE"
-        elif K > 0:
+        v_dil_ans = f"{abs(A)}"
+            
+        if K > 0:
             v_trans_dist = f"{K}"
             v_trans_dir = "UP"
         else:
@@ -131,14 +90,14 @@ class Generator(BaseGenerator):
         # --- TikZ Generation ---
         def plot_coords(points, color):
             # Join points with lines
-            coords = " -- ".join([f"({x},{y})" for x,y in points])
+            coords = " -- ".join([f"({float(x)},{float(y)})" for x,y in points])
             return f"\\draw[line width=1.5pt, {color}] {coords};"
             
         def plot_dots(points, color):
             # Draw dots at vertices
             dots = ""
             for x,y in points:
-                dots += f"\\fill[{color}] ({x},{y}) circle (5pt);\n"
+                dots += f"\\fill[{color}] ({float(x)},{float(y)}) circle (5pt);\n"
             return dots
 
         grid_setup = r"""
