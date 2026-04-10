@@ -212,5 +212,21 @@ Find asymptotes of rational functions.
 Find the zeros of polynomial functions.
             </description>
         </outcome>
+        <outcome>
+            <title>Rational Graph</title>
+            <slug>F15</slug>
+            <path>outcomes/F15</path>
+            <description>
+Graph a rational function.
+            </description>
+        </outcome>   
+        <outcome>
+            <title>Polynomial Behavior</title>
+            <slug>F16</slug>
+            <path>outcomes/F16</path>
+            <description>
+Determine characteristics of polynomial functions from their graphs.
+            </description>
+        </outcome>   
     </outcomes>
 </bank>

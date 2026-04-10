@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<knowl mode="exercise" xmlns="https://spatext.clontz.org" version="0.2">
+    <intro>
+        <p>Suppose a rational function has the attributes in the table below. Using only the holes, asymptotes, and intercepts listed along with as many of the helpful points as required, sketch the graph of the function.</p>
+        <p>
+            <me>
+                {{table_latex}}
+            </me>
+        </p>
+    </intro>
+    <content>
+        <p>
+            <me>
+                {{graph_blank}}
+            </me>
+        </p>
+    </content>
+    <outtro>
+        <p>Solution</p>
+        <p>
+            <me>
+                {{graph_sol}}
+            </me>
+        </p>
+    </outtro>
+</knowl>
