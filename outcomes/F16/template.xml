@@ -10,10 +10,10 @@
     </intro>
     <content>
         <list>
-            <item><p>(a) Is the degree of the polynomial even or odd? \underline{\hspace{3cm}}</p></item>
-            <item><p>(b) Is the lead coefficient of the polynomial positive or negative? \underline{\hspace{3cm}}</p></item>
-            <item><p>(c) Is the constant of the polynomial positive or negative? \underline{\hspace{3cm}}</p></item>
-            <item><p>(d) What is the minimum degree of the polynomial? \underline{\hspace{3cm}}</p></item>
+            <item><p>(a) Is the degree of the polynomial even or odd?</p></item>
+            <item><p>(b) Is the lead coefficient of the polynomial positive or negative?</p></item>
+            <item><p>(c) Is the constant of the polynomial positive or negative?</p></item>
+            <item><p>(d) What is the minimum degree of the polynomial?</p></item>
         </list>
     </content>
     <outtro>

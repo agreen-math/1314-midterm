@@ -164,6 +164,29 @@ class Generator(BaseGenerator):
         \\end{{array}}
         """
 
+        # --- Construct the Unexpanded Function String ---
+        def build_poly_str(coeff, roots):
+            factors = []
+            has_x = False
+            for r in roots:
+                if r == 0:
+                    has_x = True
+                elif r > 0:
+                    factors.append(f"(x - {r})")
+                else:
+                    factors.append(f"(x + {abs(r)})")
+            
+            res = ""
+            if coeff == -1: res += "-"
+            elif coeff != 1: res += str(coeff)
+            if has_x: res += "x"
+            res += "".join(factors)
+            return res
+
+        num_str = build_poly_str(d, [r1, r2, h])
+        den_str = build_poly_str(1, [v1, v2, h])
+        func_latex = f"f(x) = \\frac{{{num_str}}}{{{den_str}}}"
+
         # --- TikZ Graphing Setup ---
         grid_setup = r"""
             \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10);
@@ -214,5 +237,6 @@ class Generator(BaseGenerator):
         return {
             "table_latex": table_latex,
             "graph_blank": graph_blank,
-            "graph_sol": graph_sol
+            "graph_sol": graph_sol,
+            "func_latex": func_latex
         }

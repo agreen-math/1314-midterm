@@ -1,0 +1,619 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      Customize Header                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\assessmentTitle}{
+CheckIt Assessment
+}
+\newcommand{\assessmentVersion}{
+Version 1776364598316
+}
+\newcommand{\assessmentInstructions}{
+Do not use any unapproved aids while taking this assessment.
+Read each question carefully and be sure to show all work
+in the space provided.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\setcounter{MaxMatrixCols}{50}
+\usepackage{hyperref}
+\let\oldhref\href\renewcommand{\href}[2]{\oldhref{#1}{#2}\footnote{\url{#1}}}
+\usepackage[margin=1in,tmargin=2in,headheight=84pt]{geometry}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Name: \underline{\hspace{2.5in}}\\ID: \underline{\hspace{2.5in}}
+
+\vspace{2.5em}}
+\chead{\vspace{2.5em}
+
+\fbox{\fbox{\parbox{6in}{\centering\assessmentInstructions}}}}
+\lhead{\assessmentTitle \hspace{2em} \assessmentVersion
+
+\vspace{2.5em}}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\setlength{\headheight}{80pt}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\begin{document}
+
+\begin{enumerate}
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Fill in the table to give an equivalent equation in the specified form.
+
+ \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Exponential Form} & \textbf{Logarithmic Form} \\ \hline \rule[-1.2em]{0pt}{3em} \hspace{3cm} & \log_{6}(P) = 2 \\ \hline \rule[-1.2em]{0pt}{3em} m = 4^{3} & \hspace{3cm} \\ \hline \rule[-1.2em]{0pt}{3em} \hspace{3cm} & \log_{2}(4) = x \\ \hline \rule[-1.2em]{0pt}{3em} e^{t} = 11 & \hspace{3cm} \\ \hline \end{array}\] 
+
+\stxOuttro{
+Solution
+
+ \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Exponential Form} & \textbf{Logarithmic Form} \\ \hline \rule[-1.2em]{0pt}{3em} 6^{2} = P & \log_{6}(P) = 2 \\ \hline \rule[-1.2em]{0pt}{3em} m = 4^{3} & \log_{4}(m) = 3 \\ \hline \rule[-1.2em]{0pt}{3em} 2^{x} = 4 & \log_{2}(4) = x \\ \hline \rule[-1.2em]{0pt}{3em} e^{t} = 11 & \ln(11) = t \\ \hline \end{array}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Use properties of logarithms to expand or condense the logarithmic expression as specified.
+
+\begin{enumerate}
+\item
+\stxKnowl{
+(a) Rewrite as the sum or difference of logarithms. Express all powers as factors.
+
+\[\log_{2}\left( \frac{8y^{3}}{4z} \right)\]
+
+\stxOuttro{
+Solution
+
+\[\log_{2}(8) + 3\log_{2}(y) - \log_{2}(4) - \log_{2}(z)\]
+
+\[3 + 3\log_{2}(y) - 2 - \log_{2}(z)\]
+
+\[\boxed{ 1 + 3\log_{2}(y) - \log_{2}(z) }\]
+
+}
+}
+
+\item
+\stxKnowl{
+(b) Rewrite as a single logarithm. Express all factors as powers.
+
+\[-\frac{1}{3}\log b + 4\log y + \log z + \log z\]
+
+\stxOuttro{
+Solution
+
+\[-\log(b^{1/3}) + \log(y^{4}) + \log(z) + \log(z)\]
+
+\[\log\left(\frac{y^{4} z z}{\sqrt[3]{b}}\right)\]
+
+\[\boxed{ \log\left(\frac{y^{4} z^{2}}{\sqrt[3]{b}}\right) }\]
+
+}
+}
+
+\end{enumerate}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Solve for \(x\) and identify any extraneous solutions.
+
+\[e^{x + 2} \cdot e^{3 \, x + 1} = e^{-1}\]
+
+solutions: ____________________
+
+extraneous solutions: ____________________
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} e^{x + 2+3 \, x + 1} &= e^{-1} \\ x + 2+3 \, x + 1 &= -1 \\ 4 \, x + 3 &= -1 \\ 4 \, x &= -4 \\ x &= -1 \end{aligned}\]
+
+solutions: \(\boxed{ -1 }\)
+
+extraneous solutions: \(\boxed{ \text{none} }\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Solve for \(x\) and identify any extraneous solutions.
+
+\[\log_{5}(x + 6) + \log_{5}(x + 2) = 1\]
+
+solutions: ____________________
+
+extraneous solutions: ____________________
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} \log_{5}((x + 6)(x + 2)) &= 1 \\ 5 &= (x + 6)(x + 2) \\ 5 &= x^{2} + 8 \, x + 12 \\ 0 &= x^{2} + 8 \, x + 7 \\ 0 &= (x + 1)(x + 7) \end{aligned}\]
+
+ \(x = -1\) is a valid solution, while \(x = -7\) causes a non-positive argument in the original logarithms. 
+
+solutions: \(\boxed{ x = -1 }\)
+
+extraneous solutions: \(\boxed{ x = -7 }\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Solve for \(x\) and identify any extraneous solutions.
+
+\[\log_{8}(4) + \log_{8}(3x^2) = \log_{8}(300)\]
+
+solutions: ____________________
+
+extraneous solutions: ____________________
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} \log_{8}(4 \cdot 3x^2) &= \log_{8}(300) \\ 12x^2 &= 300 \\ x^2 &= 25 \\ x &= \pm 5 \end{aligned}\]
+
+ Both solutions are valid since substituting either into the original equation results in strictly positive arguments for the logarithms. 
+
+solutions: \(\boxed{ x = \pm 5 }\)
+
+extraneous solutions: \(\boxed{ \text{none} }\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+A savings account earns \(6\%\) annual interest compounded semiannually. An initial deposit of $2,200 is made, where \(t\) represents time in years and \(A(t)\) represents the account balance in dollars. Determine how long it will take for the account balance to reach $4,950, given:
+
+\[A(t) = 2,200 \left( 1 + \frac{0.06}{2} \right)^{2t}\]
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} 4,950 &= 2,200 \left( 1 + \frac{0.06}{2} \right)^{2t} \\ \frac{9}{4} &= (1.03)^{2t} \\ \log_{1.03}\left(\frac{9}{4}\right) &= 2t \\ \frac{\log_{1.03}\left(\frac{9}{4}\right)}{2} &= t \\ 13.717237... &\approx t \end{aligned}\]
+
+\(\boxed{\text{about } 13.7 \text{ years}}\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+ Use the table to identify the transformations described by \(f(x) = \log_{2}(x + 1) + 1\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations of the given function. If one does not apply, you may leave it blank. Then sketch the graph of the transformed function on the grid below. Indicate any asymptotes with dashed lines. 
+
+ \[\begin{array}{|l|l|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Horizontal Transformations} & \textbf{Vertical Transformations} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Reflection: YES or NO} & \text{Reflection: YES or NO} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Dilation: \underline{\hspace{2cm}} times as wide} & \text{Dilation: \underline{\hspace{2cm}} times as tall} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Translation: \underline{\hspace{2cm}} units LEFT or RIGHT} & \text{Translation: \underline{\hspace{2cm}} units UP or DOWN} \\ \hline \end{array}\] 
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture}\] 
+
+\stxOuttro{
+SOLUTION
+
+
+
+\begin{itemize}
+\item
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 1 units LEFT.}\) 
+
+\item
+ \(\textbf{Vertical: } \text{Reflection: NO, Dilation: 1, Shift: 1 units UP.}\) 
+
+\end{itemize}
+
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10.5,-10.5) rectangle (10.5,10.5);\draw[dashed, red, thick] (-1, -10.5) -- (-1, 10.5);\draw[blue, very thick, samples=100, domain=-0.990000000000000:10.5000000000000, smooth] plot (\x, {(ln(\x - (-1))/ln(2)) + (1)});\end{tikzpicture}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+ Use the table to identify the transformations described by \(f(x) = 2^{x - 1} + 6\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations of the given function. If one does not apply, you may leave it blank. Then sketch the graph of the transformed function on the grid below. Indicate any asymptotes with dashed lines. 
+
+ \[\begin{array}{|l|l|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Horizontal Transformations} & \textbf{Vertical Transformations} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Reflection: YES or NO} & \text{Reflection: YES or NO} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Dilation: \underline{\hspace{2cm}} times as wide} & \text{Dilation: \underline{\hspace{2cm}} times as tall} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Translation: \underline{\hspace{2cm}} units LEFT or RIGHT} & \text{Translation: \underline{\hspace{2cm}} units UP or DOWN} \\ \hline \end{array}\] 
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture}\] 
+
+\stxOuttro{
+SOLUTION
+
+
+
+\begin{itemize}
+\item
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 1 units RIGHT.}\) 
+
+\item
+ \(\textbf{Vertical: } \text{Reflection: NO, Dilation: 1, Shift: 6 units UP.}\) 
+
+\end{itemize}
+
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10.5,-10.5) rectangle (10.5,10.5);\draw[dashed, red, thick] (-10.5, 6) -- (10.5, 6);\draw[blue, very thick, samples=100, domain=-10.5000000000000:5.643856189774724, smooth] plot (\x, {pow(2, \x - (1)) + (6)});\end{tikzpicture}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+A coffee shop is selling lattes and muffins. On the first day of sales, they sold 40 lattes and 15 muffins for a total of $410. They took in $620 for 40 lattes and 30 muffins on the second day. Find the price of each type of item.
+
+latte: ____________________
+
+muffin: ____________________
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} \text{Let } l &\text{ = price of latte} \\ \text{Let } m &\text{ = price of muffin} \\ \\ 40l + 15m &= 410 \\ 40l + 30m &= 620 \\ \\ \text{Subtract equations:} & \\ 15m &= 210 \\ m &= 14 \\ \\ \text{Substitute back:} & \\ 40l + 15(14) &= 410 \\ 40l + 210 &= 410 \\ 40l &= 200 \\ l &= 5 \end{aligned}\]
+
+latte: \(\boxed{ \text{\$} 5 }\)
+
+muffin: \(\boxed{ \text{\$} 14 }\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Write the following system as an augmented matrix.
+
+\[\begin{aligned} 25y &= 23 - 11x \\ -4x - 17 &= -20y \end{aligned}\]
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} 11x + 25y &= 23 \\ -4x + 20y &= 17 \end{aligned}\]
+
+\[\boxed{ \left[\begin{array}{cc|c} 11 & 25 & 23 \\ -4 & 20 & 17 \end{array}\right] }\]
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Solve the following system using row operations on matrices.
+
+\[\left[\begin{array}{cc|c} -4 & 14 & 126 \\ 1 & -3 & -27 \end{array}\right]\]
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} & \left[\begin{array}{cc|c} -4 & 14 & 126 \\ 1 & -3 & -27 \end{array}\right] \\ \xrightarrow{R_1 \leftrightarrow R_2} & \left[\begin{array}{cc|c} 1 & -3 & -27 \\ -4 & 14 & 126 \end{array}\right] \\ \xrightarrow{R_2 + 4R_1 \to R_2} & \left[\begin{array}{cc|c} 1 & -3 & -27 \\ 0 & 2 & 18 \end{array}\right] \\ \xrightarrow{\frac{R_2}{2} \to R_2} & \left[\begin{array}{cc|c} 1 & -3 & -27 \\ 0 & 1 & 9 \end{array}\right] \\ \xrightarrow{R_1 + 3R_2 \to R_1} & \left[\begin{array}{cc|c} 1 & 0 & 0 \\ 0 & 1 & 9 \end{array}\right] \end{aligned}\]
+
+\(\boxed{ (0, 9) }\)
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Find the domain and range for each of the following functions.
+
+\begin{enumerate}
+\item
+\stxKnowl{
+(a) \(g(x) = x(x + 2)(x - 4)\)
+
+domain: ____________________
+
+range: ____________________
+
+\stxOuttro{
+Solution
+
+\[\text{Domain: } (-\infty, \infty)\]
+
+domain: \(\boxed{ (-\infty, \infty) }\)
+
+\[\text{Range: } (-\infty, \infty)\]
+
+range: \(\boxed{ (-\infty, \infty) }\)
+
+}
+}
+
+\item
+\stxKnowl{
+(b) \(h(x) = \displaystyle \frac{2x - 3}{2(x - 3)}\)
+
+domain: ____________________
+
+range: ____________________
+
+\stxOuttro{
+Solution
+
+\[x - 3 \neq 0 \implies x \neq 3\]
+
+domain: \(\boxed{ x \neq 3 }\)
+
+\[y = \frac{2}{2} = 2 \implies y \neq 2\]
+
+range: \(\boxed{ y \neq 2 }\)
+
+}
+}
+
+\end{enumerate}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+List all of the vertical, horizontal, and oblique asymptotes of \(f(x)\).
+
+\[f(x) = \frac{4x + 2}{3(x - 1)}\]
+
+ \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Asymptotes} & \textbf{Equation} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Vertical} & \text{\hspace{4cm}} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Horizontal} & \text{\hspace{4cm}} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Oblique} & \text{\hspace{4cm}} \\ \hline \end{array}\] 
+
+\stxOuttro{
+Solution
+
+ \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Asymptotes} & \textbf{Equation} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Vertical} & x = 1 \\ \hline \rule[-1.2em]{0pt}{3em} \text{Horizontal} & y = 4 \\ \hline \rule[-1.2em]{0pt}{3em} \text{Oblique} & \text{none} \\ \hline \end{array}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Fill in the table below with the zeros of \(f(x) = 2 \, x^{4} + 7 \, x^{3} + 5 \, x^{2}\), their multiplicities and the behavior of the graph of the function around each zero. You may or may not use all of the rows in the table.
+
+ \[\begin{array}{|c|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Zero} & \textbf{Multiplicity} & \textbf{Behavior} \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \end{array}\] 
+
+\stxOuttro{
+Solution
+
+\[\begin{aligned} f(x) &= 2 \, x^{4} + 7 \, x^{3} + 5 \, x^{2} \\ &= x^2(2 \, x^{2} + 7 \, x + 5) \\ &= x^2(2x + 5)(x + 1) \end{aligned}\]
+
+ \[\begin{array}{|c|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Zero} & \textbf{Multiplicity} & \textbf{Behavior} \\ \hline \rule[-1.2em]{0pt}{3em} -\frac{5}{2} & 1 & \text{cross} \\ \hline \rule[-1.2em]{0pt}{3em} -1 & 1 & \text{cross} \\ \hline \rule[-1.2em]{0pt}{3em} 0 & 2 & \text{bounce} \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \end{array}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Suppose a rational function has the attributes in the table below. Using only the holes, asymptotes, and intercepts listed along with as many of the helpful points as required, sketch the graph of the function.
+
+ \[\renewcommand{\arraystretch}{1.4} \begin{array}{|r|c|c|} \hline \textbf{Holes:} & (-2, -1.6) & \\ \hline \textbf{Asymptotes:} & x = -5 & x = 3 \\ & y = 4 & \\ \hline \textbf{Intercepts:} & (4, 0) & (-1, 0) \\ & (0, 1.07) & \\ \hline \textbf{Helpful Points:} & (-9, 8.67) & (2.5, 5.6) \\ & (7, 2) & \\ \hline \end{array}\] 
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture}\] 
+
+\stxOuttro{
+Solution
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-10.5,-10.5) rectangle (10.5,10.5);\draw[dashed, blue, thick, <->] (-5, -10.5) -- (-5, 10.5); \draw[dashed, blue, thick, <->] (3, -10.5) -- (3, 10.5); \draw[dashed, blue, thick, <->] (-10.5, 4) -- (10.5, 4); \draw[blue, very thick, samples=80, domain=-10.5:-5.10000000000000, smooth] plot (\x, {4 * (\x - (4)) * (\x - (-1)) / ((\x - (-5)) * (\x - (3)))}); \draw[blue, very thick, samples=80, domain=-4.90000000000000:2.90000000000000, smooth] plot (\x, {4 * (\x - (4)) * (\x - (-1)) / ((\x - (-5)) * (\x - (3)))}); \draw[blue, very thick, samples=80, domain=3.10000000000000:10.5, smooth] plot (\x, {4 * (\x - (4)) * (\x - (-1)) / ((\x - (-5)) * (\x - (3)))}); \fill[blue] (4.0, 0) circle (4pt); \fill[blue] (-1.0, 0) circle (4pt); \fill[blue] (0, 1.07) circle (4pt); \fill[blue] (-9.0, 8.67) circle (4pt); \fill[blue] (2.5, 5.6) circle (4pt); \fill[blue] (7.0, 2.0) circle (4pt); \draw[blue, thick, fill=white] (-2.0, -1.6) circle (4pt); \end{tikzpicture}\] 
+
+}
+}
+
+\newpage
+
+% 
+
+\item %%%%% SpaTeXt Commands %%%%%
+\providecommand{\stxKnowl}{}\renewcommand{\stxKnowl}[1]{#1}
+\providecommand{\stxOuttro}{}\renewcommand{\stxOuttro}[1]{#1}
+\providecommand{\stxTitle}{}\renewcommand{\stxTitle}[1]{#1}
+% Comment next line to show outtros
+\renewcommand{\stxOuttro}[1]{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stxKnowl{
+Use the graph of the polynomial function \(f(x)\) below to answer the questions that follow.
+
+ \[\begin{tikzpicture}[scale=0.39] \draw[step=1cm, gray!40, very thin] (-10,-10) grid (10,10); \draw[thick, <->] (-10.5,0) -- (10.5,0); \draw[thick, <->] (0,-10.5) -- (0,10.5); \clip (-11,-11) rectangle (11,11); \draw[<->, blue, very thick, samples=150, domain=-2.98:5.94, smooth] plot (\x, {-0.019999 * (\x + 2.5) * (\x - 1) * (\x - 2.5) * (\x - 3.5) * (\x - 4.5)}); \end{tikzpicture}\] 
+
+\begin{itemize}
+\item
+(a) Is the degree of the polynomial even or odd? \underline{\hspace{3cm}}
+
+\item
+(b) Is the lead coefficient of the polynomial positive or negative? \underline{\hspace{3cm}}
+
+\item
+(c) Is the constant of the polynomial positive or negative? \underline{\hspace{3cm}}
+
+\item
+(d) What is the minimum degree of the polynomial? \underline{\hspace{3cm}}
+
+\end{itemize}
+\stxOuttro{
+Solution:
+
+\begin{itemize}
+\item
+(a) The degree is odd.
+
+\item
+(b) The lead coefficient is negative.
+
+\item
+(c) The constant is negative.
+
+\item
+(d) The minimum degree is 5.
+
+\end{itemize}
+ \textbf{(For instructor reference, the function equation is \(-0.02(x + 2.5)(x - 1)(x - 2.5)(x - 3.5)(x - 4.5)\))} 
+
+}
+}
+
+\newpage
+
+% 
+
+\end{enumerate}
+
+\end{document}

@@ -18,6 +18,12 @@
     <outtro>
         <p>Solution</p>
         <p>
+            <em>Instructor Note:</em> The generated function is:
+            <me>
+                {{func_latex}}
+            </me>
+        </p>
+        <p>
             <me>
                 {{graph_sol}}
             </me>
