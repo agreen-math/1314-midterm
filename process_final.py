@@ -277,13 +277,11 @@ def build_q7_8(item, sols):
 \\end{{solution}}
 
 \\begin{{center}}
-\\scalebox{{0.75}}{{
-    \\begin{{tikzpicture}}[>=triangle 45]
-      \\draw [step=.5cm, style={{black!60}}] (-5.4,-5.4) grid (5.4,5.4);
-      \\draw [->, line width=2] (-5.5,0) -- (5.5,0); 
-      \\draw [->, line width=2] (0,-5.5) -- (0,5.5);
+    \\begin{{tikzpicture}}[scale=0.35,>=triangle 45]
+      \\draw [step=1cm, style={{black!60}}] (-10,-10) grid (10,10);
+      \\draw [<->, very thick] (-10.5,0) -- (10.5,0); 
+      \\draw [<->, very thick] (0,-10.5) -- (0,10.5);
     \\end{{tikzpicture}}
-}}
 \\end{{center}}
 \\newpage"""
 
@@ -428,10 +426,10 @@ def build_q15(item, sols):
 \\end{{solution}}
 \\begin{{center}}
 \\scalebox{{1}}{{
-    \\begin{{tikzpicture}}[>=triangle 45]
-      \\draw [step=.5cm, style={{black!60}}] (-5.4,-5.4) grid (5.4,5.4);
-      \\draw [->, line width=2] (-5.5,0) -- (5.5,0); 
-      \\draw [->, line width=2] (0,-5.5) -- (0,5.5);
+    \\begin{{tikzpicture}}[scale=0.35,>=triangle 45]
+      \\draw [step=1cm, style={{black!60}}] (-10,-10) grid (10,10);
+      \\draw [<->, very thick] (-10.5,0) -- (10.5,0); 
+      \\draw [<->, very thick] (0,-10.5) -- (0,10.5);
     \\end{{tikzpicture}}
 }}
 \\end{{center}}
