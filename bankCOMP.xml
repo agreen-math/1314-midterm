@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bank xmlns="https://checkit.clontz.org" version="0.2">
+<!-- MC 1314 Comprehensive Final Exam Bank SP26 -->
+    <title>MC 1314 Exam Bank SP26</title>
+    <slug>mc-1314-exam-sp26</slug>
+    <url>https://github.com/agreen-math/1314-exam</url>
+    <outcomes>
+        <outcome>
+            <title>Eval Func</title>
+            <slug>M1</slug>
+            <path>outcomes/M1</path>
+            <description>
+Evaluate a quadratic function.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Domain Range</title>
+            <slug>F12</slug>
+            <path>outcomes/F12</path>
+            <description>
+Find the domain and range of functions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Diff Quot</title>
+            <slug>M9</slug>
+            <path>outcomes/M9</path>
+            <description>
+Difference Quotient
+            </description>
+        </outcome>
+        <outcome>
+            <title>Composition</title>
+            <slug>M8</slug>
+            <path>outcomes/M8</path>
+            <description>
+Function Composition
+            </description>
+        </outcome>
+        <outcome>
+            <title>Inverse</title>
+            <slug>M6</slug>
+            <path>outcomes/M6</path>
+            <description>
+Find the inverse of a cube root function.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Prop of Quad Func</title>
+            <slug>M10</slug>
+            <path>outcomes/M10</path>
+            <description>
+Properties of Quadratic Functions
+            </description>
+        </outcome>
+        <outcome>
+            <title>Poly Zeros</title>
+            <slug>F14</slug>
+            <path>outcomes/F14</path>
+            <description>
+Find the zeros of polynomial functions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Polynomial Behavior</title>
+            <slug>F16</slug>
+            <path>outcomes/F16</path>
+            <description>
+Determine characteristics of polynomial functions from their graphs.
+            </description>
+        </outcome>  
+        <outcome>
+            <title>Rational Asymp</title>
+            <slug>F13</slug>
+            <path>outcomes/F13</path>
+            <description>
+Find asymptotes of rational functions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Log Prop</title>
+            <slug>F2</slug>
+            <path>outcomes/F2</path>
+            <description>
+Expand and condense logarithmic expressions using properties of logarithms.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Solve Quad w Complex</title>
+            <slug>M3</slug>
+            <path>outcomes/M3</path>
+            <description>
+Solve a quadratic equation with complex solutions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Solve Rational Eq</title>
+            <slug>M5</slug>
+            <path>outcomes/M5</path>
+            <description>
+Solve a rational equation with one extraneous solution.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Solve Log w 1-1</title>
+            <slug>F5</slug>
+            <path>outcomes/F5</path>
+            <description>
+Solve logarithmic equations using the one-to-one property.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Exp Log App</title>
+            <slug>F6</slug>
+            <path>outcomes/F6</path>
+            <description>
+Solve application problems involving exponential and logarithmic functions.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Word System</title>
+            <slug>F9</slug>
+            <path>outcomes/F9</path>
+            <description>
+Solve word problems involving systems of equations.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Write Matrix</title>
+            <slug>F10</slug>
+            <path>outcomes/F10</path>
+            <description>
+Write matrices for systems of equations.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Solve System</title>
+            <slug>F11</slug>
+            <path>outcomes/F11</path>
+            <description>
+Use row operations to solve systems of equations.
+            </description>
+        </outcome>
+        <outcome>
+            <title>Transformations</title>
+            <slug>M12</slug>
+            <path>outcomes/M12</path>
+            <description>
+Transformations of Functions
+            </description>
+        </outcome>
+        <outcome>
+            <title>Rational Graph</title>
+            <slug>F15</slug>
+            <path>outcomes/F15</path>
+            <description>
+Graph a rational function.
+            </description>
+        </outcome>   
+        <outcome>
+            <title>Graph Exp</title>
+            <slug>F8</slug>
+            <path>outcomes/F8</path>
+            <description>
+Graph exponential functions.
+            </description>
+        </outcome> 
+    </outcomes>
+</bank>

@@ -1,0 +1,516 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\renewcommand*\half{.5}
+
+\setlength\answerlinelength{3in}
+
+%%%%% Question Info %%%%% 
+
+%\printanswers
+
+%%%%% Header and Footer %%%%% 
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{Math 1314}{Comprehensive Final Exam}{Spring 2026}
+\runningheader{Math 1314}
+{Comprehensive Final Exam}
+{Spring 2026}
+\runningheadrule
+\firstpagefooter{}{}{}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+
+%%%%% Questions %%%%% 
+
+\begin{document}
+
+\uplevel{Number of Questions: \numquestions\hspace{\stretch{1}} Point Total: \numpoints}
+\begin{questions}
+\question
+Evaluate \(\displaystyle{ f(x) = 2 \, x^{2} - 8 \, x + 2 }\) for the requested values.\\
+    \begin{parts}
+        \part[3] \(\displaystyle{ f(-7) }\) \vspace{\stretch{1}}\\\answerline
+            \begin{solution}
+            \(2(-7)^2 - 8(-7) + 2\)
+
+\(\boxed{f(-7) = 156}\)
+            \end{solution}
+        \part[3] \(\displaystyle{ f(-x) }\) \vspace{\stretch{1}}\\\answerline
+            \begin{solution}
+            \(2(-x)^2 - 8(-x) + 2\)
+
+\(\boxed{f(-x) = 2 \, x^{2} + 8 \, x + 2}\)
+            \end{solution}
+        \part[3] \(\displaystyle{ f(x + a) }\) \vspace{\stretch{1}}\\\answerline
+            \begin{solution}
+            \(2(x+a)^2 - 8(x+a) + 2\)
+
+\(\boxed{f(x + a) = 2 \, a^{2} + 4 \, a x + 2 \, x^{2} - 8 \, a - 8 \, x + 2}\)
+            \end{solution}
+    \end{parts}
+\newpage
+
+\question
+Find the domain and range for each of the following functions.\\
+\begin{parts}
+    \part[4\half]{\(\displaystyle{ g(x) = \displaystyle \frac{5x - 5}{2(x + 4)} }\)}\\ \vspace{\stretch{1}}
+    
+domain:\fillin[\boxed{solution}][2in]\hspace{\stretch{1}}range:\fillin[\boxed{solution}][2in]
+    \begin{solution}
+    \[x + 4 \neq 0 \implies x \neq -4\]
+
+domain: \(\boxed{ x \neq -4 }\)
+
+\[y = \frac{5}{2} \implies y \neq \frac{5}{2}\]
+
+range: \(\boxed{ y \neq \frac{5}{2} }\)
+    \end{solution}
+
+    \part[4\half]{\(\displaystyle{ h(x) = (x - 5)(x + 3)(x - 4) }\)}\\ \vspace{\stretch{1}}
+    
+domain:\fillin[\boxed{solution}][2in]\hspace{\stretch{1}}range:\fillin[\boxed{solution}][2in]
+    \begin{solution}
+    \[\text{Domain: } (-\infty, \infty)\]
+
+domain: \(\boxed{ (-\infty, \infty) }\)
+
+\[\text{Range: } (-\infty, \infty)\]
+
+range: \(\boxed{ (-\infty, \infty) }\)
+    \end{solution}
+\end{parts}
+\newpage
+
+\question[4]
+Evaluate the difference quotient, \(\dfrac{f(x+h)-f(x)}{h}\), for \(\displaystyle{ f(x) = 4 \, x^{2} + 8 }\).\\
+\begin{solution}
+\(f(x+h) = 4(x+h)^2 + 8\) 
+
+ \(= 4(x^2 + 2xh + h^2) + 8\) 
+
+ \(= 4 \, h^{2} + 8 \, h x + 4 \, x^{2} + 8\) 
+
+ \(\displaystyle{\frac{f(x+h)-f(x)}{h} = \frac{ (4 \, h^{2} + 8 \, h x + 4 \, x^{2} + 8) - (4 \, x^{2} + 8) }{h}}\) 
+
+ \(=\displaystyle{ \frac{ 4 \, h^{2} + 8 \, h x }{h}}\) 
+
+ \(= \displaystyle{ \frac{ h(4 \, h + 8 \, x) }{h}}\) 
+
+ \(\boxed{ 4 \, h + 8 \, x }\)
+\end{solution}
+\vspace{\stretch{2}}\answerline
+
+\question
+Given \(\displaystyle{ f(x) = -3 \, x }\)\text{ and }\(\displaystyle{ g(x) = 5 \, x^{2} - 5 }\), find the following:\\
+    \begin{parts}
+        \part[3] \,\\
+
+       \((f\circ{g})(x)\) \vspace{\stretch{1}}\\\answerline
+\begin{solution}
+\(f(g(x)) = -3(5 \, x^{2} - 5)\) 
+
+ \(\boxed{ -15 \, x^{2} + 15 }\) 
+
+ERROR 1: \(g(f(x))\)
+
+ \(= 5(-3 \, x)^2 - 5\) 
+
+ \(= 5(9 \, x^{2}) - 5\) 
+
+ \(\boxed{ 45 \, x^{2} - 5 }\) 
+
+ERROR 2: \(f(x) \cdot g(x)\)
+
+ \(= (-3 \, x)(5 \, x^{2} - 5)\) 
+
+ \(\boxed{ -15 \, x^{3} + 15 \, x }\)
+\end{solution}
+        \part[3] \,\\
+
+        \((f\circ{f})(x)\) \vspace{\stretch{1}}\\\answerline
+\begin{solution}
+\(f(f(x)) = -3(-3 \, x)\) 
+
+ \(\boxed{ 9 \, x }\)
+\end{solution}
+    \end{parts}
+\newpage
+
+\question[5]
+Given that \(\displaystyle{ f(x) = \sqrt[3]{x + 2} + 1 }\) is one-to-one, find \(f^{-1}(x)\).\\
+\begin{solution}
+\(y = \sqrt[3]{x + 2} + 1\) 
+
+ \(x = \sqrt[3]{y + 2} + 1\) 
+
+ \(x - 1 = \sqrt[3]{y + 2}\) 
+
+ \((x - 1)^3 = y + 2\) 
+
+ \(y = (x - 1)^3 - 2\) 
+
+ \(\boxed{ f^{-1}(x) = (x - 1)^3 - 2 }\) 
+
+ **OR** 
+
+ \(= (x - 1)(x^2 - 2x + 1) - 2\) 
+
+ \(\boxed{ f^{-1}(x) = x^{3} - 3 \, x^{2} + 3 \, x - 3 }\)
+\end{solution}
+\vspace{\stretch{2}}\answerline
+
+\question[5]
+Find the vertex, axis of symmetry, x- and y-intercepts, domain, and range for the function \(\displaystyle{ f(x) = -\frac{1}{4}(x - 2)^2 +9 }\).\\
+
+\hspace{\stretch{1}}
+\renewcommand{\arraystretch}{3}
+	\begin{tabular}{|l|l|}
+		\hline
+		vertex           & \hspace{175px}  \\ \hline
+		axis of symmetry &  \\ \hline
+		x-intercepts(s)  &  \\ \hline
+		y-intercept      &  \\ \hline
+		domain           &  \\ \hline
+		range            &  \\ \hline
+	\end{tabular}
+    
+\vspace{\stretch{1}}
+\begin{solution}
+\(\textbf{Direction: } \text{Opens Down}\) 
+
+ \(\textbf{Vertex: } (2, 9)\) 
+
+ \(\textbf{Axis of Symmetry: } x = 2\) 
+
+ \(\textbf{x-intercepts:}\) 
+
+ \(-\frac{1}{4}(x - 2)^2 +9 = 0\) 
+
+ \((x - 2)^2 = 36\) 
+
+ \(x = 2 \pm 6\) 
+
+ \(\boxed{ -4, 8 }\) 
+
+ \(\textbf{y-intercept:}\) 
+
+ \(= -\frac{1}{4}(0 - 2)^2 +9\) 
+
+ \(= -\frac{1}{4}(4) +9\) 
+
+ \(= -1 +9\) 
+
+ \(\boxed{ 8 }\) 
+
+ \(\textbf{Domain: } (-\infty, \infty)\) 
+
+ \(\textbf{Range: } (-\infty, 9]\)
+\end{solution}
+\newpage
+
+\question[5] Fill in the table below with the zeros of the polynomial, their multiplicities and the behavior of the graph of the function around each zero. You may or may not use all of the rows in the table.\\
+
+\(\displaystyle{ f(x) = 3 \, x^{4} - 4 \, x^{3} - 7 \, x^{2} }\)
+
+\hspace{\stretch{1}}
+\renewcommand{\arraystretch}{3}
+\begin{tabular}{|p{20mm}|p{25mm}|p{20mm}|}\hline
+\textbf{Zero} & \textbf{Multiplicity} & \textbf{Behavior}\\ \hline
+ & & \\ \hline
+ & & \\ \hline
+ & & \\ \hline
+ & & \\ \hline
+ & & \\ \hline
+\end{tabular}
+
+\begin{solution}
+\[\begin{aligned} f(x) &= 3 \, x^{4} - 4 \, x^{3} - 7 \, x^{2} \\ &= x^2(3 \, x^{2} - 4 \, x - 7) \\ &= x^2(3x - 7)(x + 1) \end{aligned}\]
+
+ \[\begin{array}{|c|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Zero} & \textbf{Multiplicity} & \textbf{Behavior} \\ \hline \rule[-1.2em]{0pt}{3em} -1 & 1 & \text{cross} \\ \hline \rule[-1.2em]{0pt}{3em} 0 & 2 & \text{bounce} \\ \hline \rule[-1.2em]{0pt}{3em} \frac{7}{3} & 1 & \text{cross} \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \rule[-1.2em]{0pt}{3em} & & \\ \hline \end{array}\]
+\end{solution}
+\newpage
+
+\question Use the image of a polynomial below to answer the questions that follow.\\
+\begin{solution}
+\begin{itemize}
+\item
+The degree is odd.
+
+\item
+The lead coefficient is positive.
+
+\item
+The constant is negative.
+
+\item
+The minimum degree is 3.
+
+\end{itemize}
+ \textbf{(For instructor reference, the function equation is \(0.9818(x + 2.5)(x + 1)(x - 2)\))}
+\end{solution}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \clip (-11,-11) rectangle (11,11); \draw[<->, blue, very thick, samples=150, domain=-3.33:2.57, smooth] plot (\x, {0.981786 * (\x + 2.5) * (\x + 1) * (\x - 2)}); \end{tikzpicture}
+\end{center}
+\begin{parts}
+    \part[\half] Is the degree of the polynomial even or odd? \\\\
+    \begin{oneparcheckboxes}
+    \choice even
+    \choice odd
+    \end{oneparcheckboxes}\\\vspace{.125in}
+    \part[1] Is the lead coefficient of the polynomial positive or negative?\\\\ 
+    \begin{oneparcheckboxes}
+    \choice positive
+    \choice negative
+    \end{oneparcheckboxes}\\\vspace{.125in}
+    \part[\half] Is the constant of the polynomial positive or negative? \\\\
+    \begin{oneparcheckboxes}
+    \choice positive
+    \choice negative
+    \end{oneparcheckboxes}\\\vspace{.125in}
+    \part[1] What is the minimum degree? \\\\\fillin
+\end{parts}\newpage
+
+\question[3]
+List all of the vertical, horizontal, and oblique asymptotes of the rational function.\\
+
+\(\displaystyle{ f(x) = \displaystyle{\frac{4x - 5}{5(x - 5)}} }\)
+
+\hspace{\stretch{1}}
+\renewcommand{\arraystretch}{3}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Asymptotes}  & \textbf{Equation} \\ \hline
+		Vertical   & \hspace{50mm}         \\ \hline
+		Horizontal &          \\ \hline
+		Oblique    &          \\ \hline
+	\end{tabular}
+\begin{solution}
+\[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Asymptotes} & \textbf{Equation} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Vertical} & x = 5 \\ \hline \rule[-1.2em]{0pt}{3em} \text{Horizontal} & y = \frac{4}{5} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Oblique} & \text{none} \\ \hline \end{array}\]
+\end{solution}
+\vspace{\stretch{1}}
+\newpage
+
+\question Use properties of logarithms to expand or condense the logarithmic expression as specified.
+\begin{parts}
+    \part[3] Rewrite as the sum or difference of logarithms. Express all powers as factors.\\
+    
+    \(\displaystyle{ \displaystyle{\log_{3}\left( \frac{27w^{2}}{9x} \right)} }\)
+\begin{solution}
+\[\log_{3}(27) + 2\log_{3}(w) - \log_{3}(9) - \log_{3}(x)\]
+
+\[3 + 2\log_{3}(w) - 2 - \log_{3}(x)\]
+
+\[\boxed{ 1 + 2\log_{3}(w) - \log_{3}(x) }\]
+\end{solution}
+\vspace{\stretch{1}}\answerline
+    \part[3] Rewrite as a single logarithm. Express all factors as powers.\\
+    
+    \(\displaystyle{ -\ln c - 2\ln x + \displaystyle{\frac{1}{2}}\ln b - \ln c }\)
+\begin{solution}
+\[-\ln(c) - \ln(x^{2}) + \ln(b^{1/2}) - \ln(c)\]
+
+\[\ln\left(\displaystyle{\frac{\sqrt{b}}{c c x^{2}}}\right)\]
+
+\[\boxed{ \ln\left(\displaystyle{\frac{\sqrt{b}}{c^{2} x^{2}}}\right) }\]
+\end{solution}
+\vspace{\stretch{1}}\answerline
+\end{parts}
+\newpage
+
+\uplevel{For questions \ref{exact-start} through~\ref{exact-end}, solve for \textbf{all} solutions. Identify any extraneous solutions.}
+\question[7]\label{exact-start} 
+\(\displaystyle{ x^{2} + 4 \, x + 7 = 0 }\) \\
+\begin{solution}
+\(x = \frac{-(4) \pm \sqrt{(4)^2 - 4(1)(7)}}{2(1)}\) 
+
+ \(= \frac{-4 \pm \sqrt{16 - 28}}{2}\) 
+
+ \(= \frac{-4 \pm \sqrt{-12}}{2}\) 
+
+ \(= \frac{-4 \pm 2i\sqrt{3}}{2}\) 
+
+ \(= \frac{2(-2 \pm i\sqrt{3})}{2}\) 
+
+ \(\boxed{x = -2 \pm i\sqrt{3}}\) 
+
+ (No extraneous solutions)
+\end{solution}
+\vspace{\stretch{1}}
+\uplevel{solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin}
+
+\question[7]
+\(\displaystyle{ \displaystyle \frac{x}{x + 3} - \frac{6}{(x + 3)(x + 1)} = \frac{-7}{x + 1} }\)\\
+\begin{solution}
+\(x(x + 1) - 6 = -7(x + 3)\) 
+
+ \(x^{2} + 8 \, x + 15 = 0\) 
+
+ \((x + 3)(x + 5) = 0\) 
+
+ \(x = -5, \quad x = -3\) 
+
+ \(x = -3 \implies \text{Extraneous}\) 
+
+ \(\boxed{x = -5}\)
+\end{solution}
+\vspace{\stretch{1}}
+\uplevel{solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin}
+\newpage
+
+\question[6]{\label{exact-end} 
+\(\displaystyle{ \log_{9}(6) + \log_{9}(6x^2) = \log_{9}(324) }\)}\\
+\begin{solution}
+\[\begin{aligned} \log_{9}(6 \cdot 6x^2) &= \log_{9}(324) \\ 36x^2 &= 324 \\ x^2 &= 9 \\ x &= \pm 3 \end{aligned}\]
+
+ Both solutions are valid since substituting either into the original equation results in strictly positive arguments for the logarithms. 
+
+solutions: \(\boxed{ x = \pm 3 }\)
+
+extraneous solutions: \(\boxed{ \text{none} }\)
+\end{solution}
+\vspace{\stretch{1}}
+\uplevel{solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin}
+
+\question[5]
+A savings account earns 4\% annual interest compounded quarterly. An initial deposit of \$2,900 is made, where $t$ represents time in years and $A(t)$ represents the account balance in dollars. Determine how long it will take for the account balance to reach \$4,350,, given:\\
+
+\(\displaystyle{ \displaystyle{A(t) = 2,900 \left( 1 + \frac{0.04}{4} \right)^{4t}} }\) 
+\begin{solution}
+\[\begin{aligned} 4,350 &= 2,900 \left( 1 + \frac{0.04}{4} \right)^{4t} \\ \frac{3}{2} &= (1.01)^{4t} \\ \log_{1.01}\left(\frac{3}{2}\right) &= 4t \\ \frac{\log_{1.01}\left(\frac{3}{2}\right)}{4} &= t \\ 10.187227... &\approx t \end{aligned}\]
+
+\(\boxed{\text{about } 10.2 \text{ years}}\)
+\end{solution}
+\vspace{\stretch{1}}\answerline
+\newpage
+
+\question[4]
+A coffee shop is selling lattes and muffins. On the first day of sales, they sold 10 lattes and 20 muffins for a total of \$470. They took in \$560 for 10 lattes and 25 muffins on the second day. Find the price of each type of item.\\ \vspace{\stretch{1}}\\
+latte:\,\fillin[][1.5in]\hspace{\stretch{1}}muffin:\,\fillin[][1.5in]
+\begin{solution}
+\[\begin{aligned} \text{Let } l &\text{ = price of latte} \\ \text{Let } m &\text{ = price of muffin} \\ \\ 10l + 20m &= 470 \\ 10l + 25m &= 560 \\ \\ \text{Subtract equations:} & \\ 5m &= 90 \\ m &= 18 \\ \\ \text{Substitute back:} & \\ 10l + 20(18) &= 470 \\ 10l + 360 &= 470 \\ 10l &= 110 \\ l &= 11 \end{aligned}\]
+
+latte: \(\boxed{ \text{\$} 11 }\)
+
+muffin: \(\boxed{ \text{\$} 18 }\)
+\end{solution}
+\newpage
+
+\question[2]
+Write the following system as an augmented matrix.\\
+
+\(\displaystyle{ \begin{aligned} 23x + 22 &= -18y \\ -4x + 25 &= 12y \end{aligned} }\)\\
+\begin{solution}
+\[\begin{aligned} 23x + 18y &= -22 \\ 4x + 12y &= 25 \end{aligned}\]
+
+\[\boxed{ \left[\begin{array}{cc|c} 23 & 18 & -22 \\ 4 & 12 & 25 \end{array}\right] }\]
+\end{solution}
+\vspace{\stretch{1}}
+\renewcommand{\arraystretch}{1}
+
+\question[5] Solve the following system using row operations on matrices.\\
+
+\(\displaystyle{ \left[\begin{array}{cc|c} -4 & 13 & 75 \\ 1 & -2 & -10 \end{array}\right] }\)
+
+    \vspace{\stretch{5}}
+ 
+ \answerline
+\begin{solution}
+\[\begin{aligned} & \left[\begin{array}{cc|c} -4 & 13 & 75 \\ 1 & -2 & -10 \end{array}\right] \\ \xrightarrow{R_1 \leftrightarrow R_2} & \left[\begin{array}{cc|c} 1 & -2 & -10 \\ -4 & 13 & 75 \end{array}\right] \\ \xrightarrow{R_2 + 4R_1 \to R_2} & \left[\begin{array}{cc|c} 1 & -2 & -10 \\ 0 & 5 & 35 \end{array}\right] \\ \xrightarrow{\frac{R_2}{5} \to R_2} & \left[\begin{array}{cc|c} 1 & -2 & -10 \\ 0 & 1 & 7 \end{array}\right] \\ \xrightarrow{R_1 + 2R_2 \to R_1} & \left[\begin{array}{cc|c} 1 & 0 & 4 \\ 0 & 1 & 7 \end{array}\right] \end{aligned}\]
+
+\(\boxed{ (4, 7) }\)
+\end{solution}
+\newpage
+
+\question[3]
+Use the table to identify the transformations described by \(\displaystyle{ g(x) = 3f(x - 5) - 5 }\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations on the given function. If one does not apply, you may leave it blank. Then apply these transformations to the graph of the function shown below.\\
+	\renewcommand{\arraystretch}{3}
+	\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Horizontal Transformations}               & \textbf{Vertical Transformations}              \\ \hline
+		Reflection: YES    or     NO       & Reflection:       YES    or     NO    \\ \hline
+		Dilation: \underline{\hspace{2cm}} times as wide           & Dilation: \underline{\hspace{2cm}} times as tall        \\ \hline
+		Translation: \underline{\hspace{2cm}} units LEFT or RIGHT & Translation: \underline{\hspace{2cm}} units UP or DOWN \\ \hline
+	\end{tabular}
+	\end{center}
+    
+ \noindent\makebox[\textwidth][c]{ \begin{minipage}{0.48\textwidth} \centering \begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, black] (-2.0,1.0) -- (-1.0,2.0) -- (0.0,0.0) -- (1.0,4.0) -- (3.0,4.0);\fill[black] (-2.0,1.0) circle (5pt); \fill[black] (-1.0,2.0) circle (5pt); \fill[black] (0.0,0.0) circle (5pt); \fill[black] (1.0,4.0) circle (5pt); \fill[black] (3.0,4.0) circle (5pt); \end{tikzpicture} \end{minipage} \hfill \begin{minipage}{0.48\textwidth} \centering \begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture} \end{minipage} } 
+
+\begin{solution}
+\begin{itemize}
+\item
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 5 units RIGHT.}\) 
+
+\item
+ \(\textbf{Vertical: } \text{Reflection: NO, Dilation: 3, Shift: 5 units DOWN.}\) 
+
+\end{itemize}
+
+
+ \begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \draw[line width=1.5pt, blue] (3.0,-2.0) -- (4.0,1.0) -- (5.0,-5.0) -- (6.0,7.0) -- (8.0,7.0);\fill[blue] (3.0,-2.0) circle (5pt); \fill[blue] (4.0,1.0) circle (5pt); \fill[blue] (5.0,-5.0) circle (5pt); \fill[blue] (6.0,7.0) circle (5pt); \fill[blue] (8.0,7.0) circle (5pt); \end{tikzpicture}
+\end{solution}
+\newpage
+
+\question[3]
+Suppose a rational function has the attributes in the table below. Using only the holes, asymptotes, and intercepts listed along with as many of the helpful points as required, sketch the graph of the function.\\
+\begin{solution}
+\textbf{Instructor Note:} The generated function is: \[f(x) = \frac{-(x - 5)(x + 2)(x - 3)}{(x + 3)(x - 2)(x - 3)}\] 
+
+ \[\begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \clip (-10.5,-10.5) rectangle (10.5,10.5);\draw[dashed, blue, very thick, <->] (-3, -10.5) -- (-3, 10.5); \draw[dashed, blue, very thick, <->] (2, -10.5) -- (2, 10.5); \draw[dashed, blue, very thick, <->] (-10.5, -1) -- (10.5, -1); \draw[blue, very thick, samples=80, domain=-10.5:-3.10000000000000, smooth] plot (\x, {-1 * (\x - (5)) * (\x - (-2)) / ((\x - (-3)) * (\x - (2)))}); \draw[blue, very thick, samples=80, domain=-2.90000000000000:1.90000000000000, smooth] plot (\x, {-1 * (\x - (5)) * (\x - (-2)) / ((\x - (-3)) * (\x - (2)))}); \draw[blue, very thick, samples=80, domain=2.10000000000000:10.5, smooth] plot (\x, {-1 * (\x - (5)) * (\x - (-2)) / ((\x - (-3)) * (\x - (2)))}); \fill[blue] (5.0, 0) circle (4pt); \fill[blue] (-2.0, 0) circle (4pt); \fill[blue] (0, -1.67) circle (4pt); \fill[blue] (-4.0, -3.0) circle (4pt); \fill[blue] (1.0, -3.0) circle (4pt); \fill[blue] (9.0, -0.52) circle (4pt); \draw[blue, very thick, fill=white] (3.0, 1.67) circle (4pt); \end{tikzpicture}\]
+\end{solution}
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\[\begin{array}{|r|c|c|} \hline \textbf{Holes:} & (3, 1.67) & \\ \hline \textbf{Asymptotes:} & x = -3 & x = 2 \\ & y = -1 & \\ \hline \textbf{Intercepts:} & (5, 0) & (-2, 0) \\ & (0, -1.67) & \\ \hline \textbf{Helpful Points:} & (-4, -3) & (1, -3) \\ & (9, -0.52) & \\ \hline \end{array}\]
+\vspace{12pt}
+
+    \begin{tikzpicture}[scale=0.5,>=triangle 45]
+      \draw [step=1cm, style={black!60}] (-10,-10) grid (10,10);
+      \draw [<->, very thick] (-10.5,0) -- (10.5,0); 
+      \draw [<->, very thick] (0,-10.5) -- (0,10.5);
+    \end{tikzpicture}
+\end{center}
+\newpage
+
+\question[3]
+Use the table to identify the transformations described by \(\displaystyle{ f(x) = 2^{x - 1} + 3 }\). Circle the option that applies and fill in the blanks as appropriate to describe the transformations on the given function. If one does not apply, you may leave it blank. Then sketch the graph of the transformed function on the grid below. Indicate any asymptotes with dashed lines.\\
+	\renewcommand{\arraystretch}{3} % Triple spacing
+	\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Horizontal Transformations}               & \textbf{Vertical Transformations}              \\ \hline
+		Reflection: YES    or     NO       & Reflection:       YES    or     NO    \\ \hline
+		Dilation: \underline{\hspace{2cm}} times as wide           & Dilation: \underline{\hspace{2cm}} times as tall        \\ \hline
+		Translation: \underline{\hspace{2cm}} units LEFT or RIGHT & Translation: \underline{\hspace{2cm}} units UP or DOWN \\ \hline
+	\end{tabular}
+\end{center}
+\vspace{12pt}
+
+\begin{center}
+ \begin{tikzpicture}[scale=0.4,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \end{tikzpicture} 
+\end{center}
+
+\begin{solution}
+\begin{itemize}
+\item
+ \(\textbf{Horizontal: } \text{Reflection: NO, Dilation: 1, Shift: 1 units RIGHT.}\) 
+
+\item
+ \(\textbf{Vertical: } \text{Reflection: NO, Dilation: 1, Shift: 3 units UP.}\) 
+
+\end{itemize}
+
+
+ \[\begin{tikzpicture}[scale=0.39,>=triangle 45] \draw[step=1cm, black!60] (-10,-10) grid (10,10); \draw[very thick, <->] (-10.5,0) -- (10.5,0); \draw[very thick, <->] (0,-10.5) -- (0,10.5); \clip (-10.5,-10.5) rectangle (10.5,10.5);\draw[dashed, red, thick] (-10.5, 3) -- (10.5, 3);\draw[blue, very thick, samples=100, domain=-10.5000000000000:5.643856189774724, smooth] plot (\x, {pow(2, \x - (1)) + (3)});\end{tikzpicture}\]
+\end{solution}
+\end{questions}
+\end{document}
