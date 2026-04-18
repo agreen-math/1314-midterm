@@ -35,11 +35,11 @@
 \uplevel{Number of Questions: \numquestions\hspace{\stretch{1}} Point Total: \numpoints}
 \begin{questions}
 \question[5] Fill in the table to give an equivalent equation in the specified form.\\
-{\centering {\renewcommand{\arraystretch}{3}
+\begin{center} {\renewcommand{\arraystretch}{3}
 \[
 \begin{array}{|c|c|} \hline  \textbf{Exponential Form} & \textbf{Logarithmic Form} \\ \hline  \hspace{75mm} & \log_{4}(P) = 5 \\ \hline  \hspace{75mm} & \log_{3}(k) = 3 \\ \hline  e^{y} = 15 & \hspace{75mm} \\ \hline  4^{x} = 256 & \hspace{75mm} \\ \hline \end{array}
 \]
-}}
+}\end{center}
 \begin{solution}
 \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Exponential Form} & \textbf{Logarithmic Form} \\ \hline \rule[-1.2em]{0pt}{3em} 4^{5} = P & \log_{4}(P) = 5 \\ \hline \rule[-1.2em]{0pt}{3em} k = 3^{3} & \log_{3}(k) = 3 \\ \hline \rule[-1.2em]{0pt}{3em} e^{y} = 15 & \ln(15) = y \\ \hline \rule[-1.2em]{0pt}{3em} 4^{x} = 256 & \log_{4}(256) = x \\ \hline \end{array}\]
 \end{solution}
@@ -84,7 +84,7 @@ solutions: \(\boxed{ -\frac{6}{5} }\)
 extraneous solutions: \(\boxed{ \text{none} }\)
 \end{solution}
 \vspace{\stretch{1}}
-\par solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin
+\par solutions: \fillin[][1.5in] \hspace{\stretch{1}} extraneous solutions: \fillin[][1.5in]
 
 \question[6] 
 \(\displaystyle{ \log_{6}(x - 1) + \log_{6}(x + 4) = 1 }\)
@@ -98,7 +98,7 @@ solutions: \(\boxed{ x = 2 }\)
 extraneous solutions: \(\boxed{ x = -5 }\)
 \end{solution}
 \vspace{\stretch{1}}
-\par solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin\newpage
+\par solutions: \fillin[][1.5in] \hspace{\stretch{1}} extraneous solutions: \fillin[][1.5in]\newpage
 
 \question[6] \label{exact-end}
 \(\displaystyle{ \log_{5}(8x^2) + \log_{5}(4) = \log_{5}(128) }\)
@@ -112,9 +112,9 @@ solutions: \(\boxed{ x = \pm 2 }\)
 extraneous solutions: \(\boxed{ \text{none} }\)
 \end{solution}
 \vspace{\stretch{1}}
-\par solutions: \fillin\fillin \hspace{\stretch{1}} extraneous solutions: \fillin\fillin
+\par solutions: \fillin[][1.5in] \hspace{\stretch{1}} extraneous solutions: \fillin[][1.5in]
 
-\question[6] A savings account earns 5\% annual interest compounded quarterly. An initial deposit of \$1,500 is made, where $t$ represents time in years and $A(t)$ represents the account balance in dollars. Determine how long it will take for the account balance to reach \$3,375,, given:
+\question[6] A savings account earns 5\% annual interest compounded quarterly. An initial deposit of \$1,500 is made, where $t$ represents time in years and $A(t)$ represents the account balance in dollars. Determine how long it will take for the account balance to reach \$3,375, given:
 
 \(\displaystyle{ \displaystyle{A(t) = 1,500 \left( 1 + \frac{0.05}{4} \right)^{4t}} }\)
 \begin{solution}
@@ -197,7 +197,7 @@ extraneous solutions: \(\boxed{ \text{none} }\)
 
 \question[6] A coffee shop is selling lattes and muffins. On the first day of sales, they sold 40 lattes and 10 muffins for a total of \$730. They took in \$980 for 40 lattes and 20 muffins on the second day. Find the price of each type of item.
 \vspace{\stretch{1}}\\
-latte:\fillin \hspace{\stretch{1}} muffin:\fillin
+latte: \fillin[][1.5in] \hspace{\stretch{1}} muffin: \fillin[][1.5in]
 \begin{solution}
 \[\begin{aligned} \text{Let } l &\text{ = price of latte} \\ \text{Let } m &\text{ = price of muffin} \\ \\ 40l + 10m &= 730 \\ 40l + 20m &= 980 \\ \\ \text{Subtract equations:} & \\ 10m &= 250 \\ m &= 25 \\ \\ \text{Substitute back:} & \\ 40l + 10(25) &= 730 \\ 40l + 250 &= 730 \\ 40l &= 480 \\ l &= 12 \end{aligned}\]
 
@@ -207,7 +207,7 @@ muffin: \(\boxed{ \text{\$} 25 }\)
 \end{solution}
 \newpage
 
-\question[4] Write the augmented matrix for the system of linear equations.\\
+\question[4] Write the following system as an augmented matrix.\\
     
 \(\displaystyle{ \begin{aligned} -4x + 9 &= 25y \\ 12 - 8y &= -3x \end{aligned} }\)
 \begin{solution}
@@ -217,7 +217,7 @@ muffin: \(\boxed{ \text{\$} 25 }\)
 \end{solution}
 \vspace{\stretch{1}}
 
-\question[6] Perform the row operations on the given matrix.\\
+\question[6] Solve the following system using row operations on matrices.\\
     
 \(\displaystyle{ \left[\begin{array}{cc|c} 6 & 18 & -96 \\ 1 & 2 & -13 \end{array}\right] }\)
 \begin{solution}
@@ -232,7 +232,7 @@ muffin: \(\boxed{ \text{\$} 25 }\)
 \begin{parts}
     \part[5] \(\displaystyle{ g(x) = \displaystyle \frac{3x + 5}{3(x - 3)} }\)
     \vspace{\stretch{1}}\\
-    domain:\fillin[][2in] \hspace{\stretch{1}} range:\fillin[][2in]
+    domain: \fillin[][2in] \hspace{\stretch{1}} range: \fillin[][2in]
     \begin{solution}
     \[x - 3 \neq 0 \implies x \neq 3\]
 
@@ -245,7 +245,7 @@ range: \(\boxed{ y \neq 1 }\)
 
     \part[5] \(\displaystyle{ h(x) = (x + 3)(x - 4)(x + 4) }\)
     \vspace{\stretch{1}}\\
-    domain:\fillin[][2in] \hspace{\stretch{1}} range:\fillin[][2in]
+    domain: \fillin[][2in] \hspace{\stretch{1}} range: \fillin[][2in]
     \begin{solution}
     \[\text{Domain: } (-\infty, \infty)\]
 
@@ -259,9 +259,12 @@ range: \(\boxed{ (-\infty, \infty) }\)
 \newpage
 \newpage
 
-\question[5] List all of the vertical, horizontal, and oblique asymptotes of \(\displaystyle{ f(x) = \displaystyle{\frac{x + 3}{5(x + 1)}} }\).\\
-\begin{center}
-\renewcommand{\arraystretch}{3}
+\question[5] List all of the vertical, horizontal, and oblique asymptotes of the rational function.\\
+        
+    \(\displaystyle{ f(x) = \displaystyle{\frac{x + 3}{5(x + 1)}} }\)
+    
+\hspace{\stretch{1}}
+    \renewcommand{\arraystretch}{3}
     \begin{tabular}{|c|c|}
         \hline
         \textbf{Asymptotes}  & \textbf{Equation} \\ \hline
@@ -269,7 +272,6 @@ range: \(\boxed{ (-\infty, \infty) }\)
         Horizontal &  \\ \hline
         Oblique    &  \\ \hline
     \end{tabular}
-\end{center}
 \begin{solution}
 \[\begin{array}{|c|c|} \hline \rule[-0.8em]{0pt}{2.2em} \textbf{Asymptotes} & \textbf{Equation} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Vertical} & x = -1 \\ \hline \rule[-1.2em]{0pt}{3em} \text{Horizontal} & y = \frac{1}{5} \\ \hline \rule[-1.2em]{0pt}{3em} \text{Oblique} & \text{none} \\ \hline \end{array}\]
 \end{solution}
@@ -307,7 +309,7 @@ range: \(\boxed{ (-\infty, \infty) }\)
 \end{solution}
 \begin{center}
 \scalebox{1}{
-    \begin{tikzpicture}[scale=0.35,>=triangle 45]
+    \begin{tikzpicture}[scale=0.5,>=triangle 45]
       \draw [step=1cm, style={black!60}] (-10,-10) grid (10,10);
       \draw [<->, very thick] (-10.5,0) -- (10.5,0); 
       \draw [<->, very thick] (0,-10.5) -- (0,10.5);

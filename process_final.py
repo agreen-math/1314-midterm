@@ -139,11 +139,11 @@ def build_q1(item, sols):
     sol = sols[0] if sols else ""
     
     return f"""\\question[5] Fill in the table to give an equivalent equation in the specified form.\\\\
-{{\\centering {{\\renewcommand{{\\arraystretch}}{{3}}
+\\begin{{center}} {{\\renewcommand{{\\arraystretch}}{{3}}
 \\[
 {math}
 \\]
-}}}}
+}}\\end{{center}}
 \\begin{{solution}}
 {sol}
 \\end{{solution}}
@@ -193,7 +193,7 @@ def build_q3(item, sols):
 {sol}
 \\end{{solution}}
 \\vspace{{\\stretch{{1}}}}
-\\par solutions: \\fillin\\fillin \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin\\fillin"""
+\\par solutions: \\fillin[][1.5in] \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin[][1.5in]"""
 
 def build_q4(item, sols):
     maths = extract_math(item)
@@ -208,7 +208,7 @@ def build_q4(item, sols):
 {sol}
 \\end{{solution}}
 \\vspace{{\\stretch{{1}}}}
-\\par solutions: \\fillin\\fillin \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin\\fillin\\newpage"""
+\\par solutions: \\fillin[][1.5in] \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin[][1.5in]\\newpage"""
 
 def build_q5(item, sols):
     maths = extract_math(item)
@@ -223,7 +223,7 @@ def build_q5(item, sols):
 {sol}
 \\end{{solution}}
 \\vspace{{\\stretch{{1}}}}
-\\par solutions: \\fillin\\fillin \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin\\fillin"""
+\\par solutions: \\fillin[][1.5in] \\hspace{{\\stretch{{1}}}} extraneous solutions: \\fillin[][1.5in]"""
 
 def build_q6(item, sols):
     sol = sols[0] if sols else ""
@@ -243,7 +243,7 @@ def build_q6(item, sols):
         final = final_match.group(1)
         freq = freq_match.group(1).lower()
         
-        prompt = f"A savings account earns {rate}\\% annual interest compounded {freq}. An initial deposit of \\${initial} is made, where $t$ represents time in years and $A(t)$ represents the account balance in dollars. Determine how long it will take for the account balance to reach \\${final}, given:\n\n{math}"
+        prompt = f"A savings account earns {rate}\\% annual interest compounded {freq}. An initial deposit of \\${initial} is made, where $t$ represents time in years and $A(t)$ represents the account balance in dollars. Determine how long it will take for the account balance to reach \\${final} given:\n\n{math}"
     else:
         prompt = get_word_problem_prompt(item)
         if math not in prompt:
@@ -303,7 +303,7 @@ def build_q9(item, sols):
             
     return f"""\\question[6] {prompt}
 \\vspace{{\\stretch{{1}}}}\\\\
-{item1}:\\fillin \\hspace{{\\stretch{{1}}}} {item2}:\\fillin
+{item1}: \\fillin[][1.5in] \\hspace{{\\stretch{{1}}}} {item2}: \\fillin[][1.5in]
 \\begin{{solution}}
 {sol}
 \\end{{solution}}
@@ -316,7 +316,7 @@ def build_q10(item, sols):
     math = format_math(max(eqs, key=len)) if eqs else ""
     sol = sols[0] if sols else ""
     
-    return f"""\\question[4] Write the augmented matrix for the system of linear equations.\\\\
+    return f"""\\question[4] Write the following system as an augmented matrix.\\\\
     
 {math}
 \\begin{{solution}}
@@ -331,7 +331,7 @@ def build_q11(item, sols):
     math = format_math(max(eqs, key=len)) if eqs else ""
     sol = sols[0] if sols else ""
     
-    return f"""\\question[6] Perform the row operations on the given matrix.\\\\
+    return f"""\\question[6] Solve the following system using row operations on matrices.\\\\
     
 {math}
 \\begin{{solution}}
@@ -354,14 +354,14 @@ def build_q12(item, sols):
 \\begin{{parts}}
     \\part[5] {math1}
     \\vspace{{\\stretch{{1}}}}\\\\
-    domain:\\fillin[][2in] \\hspace{{\\stretch{{1}}}} range:\\fillin[][2in]
+    domain: \\fillin[][2in] \\hspace{{\\stretch{{1}}}} range: \\fillin[][2in]
     \\begin{{solution}}
     {sol1}
     \\end{{solution}}
 
     \\part[5] {math2}
     \\vspace{{\\stretch{{1}}}}\\\\
-    domain:\\fillin[][2in] \\hspace{{\\stretch{{1}}}} range:\\fillin[][2in]
+    domain: \\fillin[][2in] \\hspace{{\\stretch{{1}}}} range: \\fillin[][2in]
     \\begin{{solution}}
     {sol2}
     \\end{{solution}}
@@ -373,9 +373,12 @@ def build_q13(item, sols):
     func = format_math(extract_func(item))
     sol = sols[0] if sols else ""
     
-    return f"""\\question[5] List all of the vertical, horizontal, and oblique asymptotes of {func}.\\\\
-\\begin{{center}}
-\\renewcommand{{\\arraystretch}}{{3}}
+    return f"""\\question[5] List all of the vertical, horizontal, and oblique asymptotes of the rational function.\\\\
+        
+    {func}
+    
+\\hspace{{\\stretch{{1}}}}
+    \\renewcommand{{\\arraystretch}}{{3}}
     \\begin{{tabular}}{{|c|c|}}
         \\hline
         \\textbf{{Asymptotes}}  & \\textbf{{Equation}} \\\\ \\hline
@@ -383,7 +386,6 @@ def build_q13(item, sols):
         Horizontal &  \\\\ \\hline
         Oblique    &  \\\\ \\hline
     \\end{{tabular}}
-\\end{{center}}
 \\begin{{solution}}
 {sol}
 \\end{{solution}}
@@ -426,7 +428,7 @@ def build_q15(item, sols):
 \\end{{solution}}
 \\begin{{center}}
 \\scalebox{{1}}{{
-    \\begin{{tikzpicture}}[scale=0.35,>=triangle 45]
+    \\begin{{tikzpicture}}[scale=0.5,>=triangle 45]
       \\draw [step=1cm, style={{black!60}}] (-10,-10) grid (10,10);
       \\draw [<->, very thick] (-10.5,0) -- (10.5,0); 
       \\draw [<->, very thick] (0,-10.5) -- (0,10.5);
